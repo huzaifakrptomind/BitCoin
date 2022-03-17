@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BitCoin.iml" filepath="$PROJECT_DIR$/.idea/modules/BitCoin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BitCoin.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BitCoin.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1960838803/BitCoin.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/-1960838803/BitCoin.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1032663611/BitCoin.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/-1032663611/BitCoin.react-native-screens.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1370699088/BitCoin.react-native-splash-screen.iml" filepath="$PROJECT_DIR$/.idea/modules/1370699088/BitCoin.react-native-splash-screen.iml" />
+    </modules>
+  </component>
+</project>
