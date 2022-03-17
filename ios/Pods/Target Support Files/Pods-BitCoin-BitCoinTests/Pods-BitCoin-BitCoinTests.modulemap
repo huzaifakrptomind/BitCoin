@@ -1,0 +1,6 @@
+module Pods_BitCoin_BitCoinTests {
+  umbrella header "Pods-BitCoin-BitCoinTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
