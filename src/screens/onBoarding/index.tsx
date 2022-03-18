@@ -5,6 +5,7 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
@@ -45,7 +46,11 @@ const onBoarding = (props: Props) => {
           // dotStyle={{ backgroundColor: THEME.COLORS.dotColor }}
           activeDotStyle={{ backgroundColor: THEME.COLORS.dotColor }}
           renderDoneButton={() => (
-            <Text style={styles.sliderDoneButton}>Skip</Text>
+            <TouchableOpacity
+              onPress={() => props.navigation?.navigate("Home")}
+            >
+              <Text style={styles.sliderDoneButton}>Skip</Text>
+            </TouchableOpacity>
           )}
           renderSkipButton={() => (
             <Text style={styles.sliderDoneButton}>Skip</Text>

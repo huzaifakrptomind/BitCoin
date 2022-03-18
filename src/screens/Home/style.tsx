@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: THEME.FONTS.SIZE.XXSMALL,
     color: THEME.COLORS.white,
-    margin: RF(20),
+    margin: RF(30),
   },
   actionContainer: {
     position: "absolute",
