@@ -16,7 +16,14 @@ import {
 } from "../../shared/utils/AppConstants";
 import { IntroSlide } from "../../shared/utils/models/types";
 import { THEME } from "../../shared/utils/theme";
-const IntroSlide = () => {
+import { GenericNavigation } from "../../shared/utils/models/types";
+import styles from "./styles";
+interface Props extends GenericNavigation {}
+
+const onBoarding = (props: Props) => {
+  console.log("---props---", props);
+
+  const [onDone, setonDone] = useState(false);
   useEffect(() => {
     SplashScreen.hide();
   }, []);
@@ -32,11 +39,11 @@ const IntroSlide = () => {
           renderItem={({ item }: { item: IntroSlide }) => (
             <IntroSlider item={item} />
           )}
-          data={Platform.OS === "android" ? INTRO_SLIDES : IOS_INTRO_SLIDES}
-          //   onSkip={onDone}
-          //   onDone={onDone}
-          dotStyle={{ backgroundColor: THEME.COLORS.textLight }}
-          activeDotStyle={{ backgroundColor: THEME.COLORS.yellow }}
+          data={INTRO_SLIDES}
+          //  onSkip={}
+          //  onDone={onDone}
+          // dotStyle={{ backgroundColor: THEME.COLORS.dotColor }}
+          activeDotStyle={{ backgroundColor: THEME.COLORS.dotColor }}
           renderDoneButton={() => (
             <Text style={styles.sliderDoneButton}>Skip</Text>
           )}
@@ -49,19 +56,19 @@ const IntroSlide = () => {
   );
 };
 
-export default IntroSlide;
+export default onBoarding;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  sliderDoneButton: {
-    color: THEME.COLORS.yellow,
-    fontFamily: THEME.FONTS.TYPE.REGULAR,
-    fontSize: THEME.FONTS.SIZE.SMALL,
-    marginVertical: THEME.MARGIN.NORMAL,
-    alignSelf: "center",
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: "center",
+//     alignItems: "center",
+//   },
+//   sliderDoneButton: {
+//     color: THEME.COLORS.textLight,
+//     // fontFamily: THEME.FONTS.TYPE.REGULAR,
+//     fontSize: THEME.FONTS.SIZE.SMALL,
+//     marginVertical: THEME.MARGIN.NORMAL,
+//     alignSelf: "center",
+//   },
+// });
