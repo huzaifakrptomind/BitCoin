@@ -4,6 +4,12 @@ const ICONS = {
   OB2: require("./onBoarding/ob2.png"),
   OB3: require("./onBoarding/ob3.png"),
   logo: require("../asset/logo.png"),
+  cross: require("../asset/icons/cross.png"),
+  dotlight: require("../asset/icons/dot.png"),
+  dotColor: require("../asset/icons/dotfill.png"),
+  backArrow: require("../asset/icons/backArrow.png"),
+  crossCircle: require("../asset/icons/cross-circle.png"),
+  scanner: require("../asset/icons/scanner.png"),
 
   BACKSPACE: require("./icons/backspace.png"),
   TX_SENT: require("./icons/sentLight.png"),

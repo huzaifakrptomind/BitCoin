@@ -6,6 +6,8 @@ export const THEME = {
     primaryLightBackground: "#E6F2FF",
     secondaryDarkBackground: "#3B6BFF",
     secondaryLightBackground: "#EFEFEF",
+    blacklight: "#707070",
+    lightGray: "#F7F7F7",
     changeGreen: "#00C053",
     changeRed: "#ff3939",
     yellow: "#E4B40E",

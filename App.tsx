@@ -6,6 +6,8 @@ import Intro from "./src/screens/Home";
 import Home from "./src/screens/Home";
 import Security from "./src/screens/Security";
 import SplashScreen from "react-native-splash-screen";
+import Seed from "./src/screens/Seed";
+import Biometry from "./src/screens/Biometry";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -21,7 +23,9 @@ export default function App() {
       >
         <Stack.Screen name="onBoarding" component={Boarding} />
         <Stack.Screen name="Home" component={Home} />
-        {/* <Stack.Screen name="Security" component={Security} /> */}
+        <Stack.Screen name="Security" component={Security} />
+        <Stack.Screen name="Seed" component={Seed} />
+        <Stack.Screen name="Biometry" component={Biometry} />
       </Stack.Navigator>
     </NavigationContainer>
   );

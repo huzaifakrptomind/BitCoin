@@ -83,8 +83,8 @@ const NumKeyboard = ({
                 style={{
                   alignSelf: "center",
                   fontFamily: THEME.FONTS.TYPE.BOLD,
-                  color: THEME.COLORS.black,
-                  fontSize: THEME.FONTS.SIZE.LARGE,
+                  color: THEME.COLORS.disabledTextLight,
+                  fontSize: THEME.FONTS.SIZE.XSMALL,
                 }}
               >
                 {buttonText}
@@ -96,11 +96,11 @@ const NumKeyboard = ({
         <NumberComp value={"0"} onPress={() => handlePress("0")} />
 
         <TouchableOpacity style={styles.numberContainer} onPress={handleDelete}>
-          {/* <FastImage
-            source={ICONS.ARROW_BACK}
+          <FastImage
+            source={ICONS.cross}
             style={styles.backIcon}
             resizeMode="contain"
-          /> */}
+          />
         </TouchableOpacity>
       </View>
     </View>
@@ -116,7 +116,7 @@ const NumberComp = ({
 }) => {
   const [isBackgroundVisible, setIsBackgroundVisibles] = useState(false);
 
-  console.log(isBackgroundVisible);
+  // console.log(isBackgroundVisible);
 
   return (
     <TouchableOpacity
@@ -125,10 +125,21 @@ const NumberComp = ({
       onPressIn={() => setIsBackgroundVisibles(true)}
       onPressOut={() => setIsBackgroundVisibles(false)}
     >
-      {isBackgroundVisible && <Image source={ICONS.CLIPBOARD} />}
-      <View>
-        <AppText style={styles.numberText}>{value}</AppText>
-      </View>
+      {isBackgroundVisible && (
+        <Image source={ICONS.CLIPBOARD} style={{ position: "absolute" }} />
+      )}
+      <AppText
+        style={[
+          styles.numberText,
+          {
+            color: isBackgroundVisible
+              ? THEME.COLORS.white
+              : THEME.COLORS.disabledTextLight,
+          },
+        ]}
+      >
+        {value}
+      </AppText>
     </TouchableOpacity>
   );
 };

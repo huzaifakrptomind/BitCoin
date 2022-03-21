@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
     fontSize: THEME.FONTS.SIZE.XXLARGE,
     // fontFamily: THEME.FONTS.TYPE.SEMIBOLD,
     fontWeight: "500",
-    color: THEME.COLORS.black,
+    color: THEME.COLORS.disabledTextLight,
+    // position: "relative",
   },
   numberContainer: {
     flex: 1,
@@ -27,8 +28,8 @@ const styles = StyleSheet.create({
   },
 
   backIcon: {
-    height: RF(25),
-    width: RF(25),
+    height: RF(35),
+    width: RF(35),
   },
   confirmText: {
     backgroundColor: THEME.COLORS.black,

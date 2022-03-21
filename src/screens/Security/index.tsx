@@ -16,12 +16,23 @@ import PinModal from "../../shared/components/PinModal";
 interface Props extends GenericNavigation {}
 
 const Security = (props: Props) => {
+  const [modalVisible, setModalVisible] = useState(true);
+
   return (
     <>
-      <StatusBar backgroundColor={THEME.COLORS.primaryLightBackground} />
+      <StatusBar backgroundColor={THEME.COLORS.white} />
       <SafeAreaView style={[{ flex: 1 }]}>
         <View style={styles.container}>
-          <PinModal title="Security Check" subTitle="bsfj" />
+          <PinModal
+            visible={modalVisible}
+            title="Security Check"
+            subTitle="Enter New Pin"
+            onConfirm={() => {
+              console.log("---confirm---");
+              setModalVisible(false);
+              props.navigation?.navigate("Seed");
+            }}
+          />
         </View>
       </SafeAreaView>
     </>

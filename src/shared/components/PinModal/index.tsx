@@ -1,78 +1,93 @@
-import React, { useEffect, useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  BackHandler,
-  Modal,
-  StatusBar,
-} from "react-native";
-import TouchID from "react-native-touch-id";
-
-// import Modal from 'react-native-modal';
+import React, { useState } from "react";
+import { Modal, StatusBar, StyleSheet, Text, View } from "react-native";
 import FastImage from "react-native-fast-image";
-// import ICONS from "../../../assets";
-import { useNavigation } from "@react-navigation/core";
-import NumKeyboard from "../NumKeyboard";
-import AppText from "../AppText";
+import { ICONS } from "../../../asset";
 import { THEME } from "../../utils/theme";
 import { RF } from "../../utils/theme/responsive";
-import { ICONS } from "../../../asset";
+import AppText from "../AppText";
+import NumKeyboard from "../NumKeyboard";
+
 const PinModal = ({
   visible,
-  onClose,
   title,
   subTitle,
+  onConfirm,
 }: {
   visible: boolean;
-  onClose: () => void;
   title: string;
   subTitle: string;
+  onConfirm?: any;
 }) => {
   const [code, setCode] = useState("");
 
-  const [error, setError] = useState(false);
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      {/* <AppHeader showQR /> */}
-      <Modal
-        // onBackButtonPress={() => null}
-        visible={visible}
-        animationType="slide"
-      >
+
+      <Modal visible={visible} animationType="slide">
         <View style={styles.container}>
           <View style={{ flex: 1 }}>
-            <View style={{ margin: RF(30) }}>
-              <AppText style={styles.Title}>{title}</AppText>
+            <View
+              style={{
+                marginTop: RF(100),
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <AppText style={styles.title}>{title}</AppText>
               <Text style={styles.subTitle}>{subTitle}</Text>
             </View>
 
-            {/* {true && (
-              <TouchableOpacity
-                style={styles.crossContainer}
-                // onPress={authenticate}
-              >
-                <FastImage
-                  source={ICONS.BIO_SET}
-                  resizeMode={FastImage.resizeMode.contain}
-                  style={styles.cross}
-                />
-              </TouchableOpacity>
-            )} */}
-
             <View style={styles.keyboardView}>
               <View style={styles.numberInput}>
-                {["•", "•", "•", "•", "•", "•"].map((item, index) => {
+                {[
+                  <FastImage
+                    source={ICONS.dotColor}
+                    style={styles.backIcon}
+                    resizeMode="contain"
+                  />,
+                  <FastImage
+                    source={ICONS.dotColor}
+                    style={styles.backIcon}
+                    resizeMode="contain"
+                  />,
+                  <FastImage
+                    source={ICONS.dotColor}
+                    style={styles.backIcon}
+                    resizeMode="contain"
+                  />,
+                  <FastImage
+                    source={ICONS.dotColor}
+                    style={styles.backIcon}
+                    resizeMode="contain"
+                  />,
+                  <FastImage
+                    source={ICONS.dotColor}
+                    style={styles.backIcon}
+                    resizeMode="contain"
+                  />,
+                  <FastImage
+                    source={ICONS.dotColor}
+                    style={styles.backIcon}
+                    resizeMode="contain"
+                  />,
+                ].map((item, index) => {
                   return (
                     <AppText key={index} style={styles.codeItem}>
-                      {code[index] ? item : "_"}
+                      {code[index] ? (
+                        item
+                      ) : (
+                        <FastImage
+                          source={ICONS.dotlight}
+                          style={styles.backIcon}
+                          resizeMode="contain"
+                        />
+                      )}
                     </AppText>
                   );
                 })}
               </View>
-              <TouchableOpacity style={{ alignSelf: "center" }}>
+              {/* <TouchableOpacity style={{ alignSelf: "center" }}>
                 <Text
                   style={{
                     // fontFamily: THEME.FONTS.TYPE.SEMIBOLD,
@@ -82,10 +97,10 @@ const PinModal = ({
                 >
                   Forget your PIN?
                 </Text>
-              </TouchableOpacity>
+              </TouchableOpacity> */}
               <NumKeyboard
                 showOkay
-                onPressOkay={() => getPin(code)}
+                onPressOkay={onConfirm}
                 buttonText={"OK"}
                 value={code}
                 onChangeText={setCode}
@@ -93,6 +108,12 @@ const PinModal = ({
                 maxLength={6}
               />
             </View>
+          </View>
+          <View style={styles.bottomContainer}>
+            <AppText style={[styles.tagTitle]}>{"Powerd By "}</AppText>
+            <AppText style={[styles.tagTitle, { fontWeight: "bold" }]}>
+              {"EgonSwap"}
+            </AppText>
           </View>
         </View>
       </Modal>
@@ -104,11 +125,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: THEME.COLORS.white,
-    // borderWidth: 1,
-
-    // ...StyleSheet.absoluteFillObject,
-    // height: '100%',
-    // width: '100%',
   },
   heading: {
     marginBottom: THEME.MARGIN.HIGH,
@@ -140,7 +156,7 @@ const styles = StyleSheet.create({
   },
   codeItem: {
     marginHorizontal: RF(5),
-    color: THEME.COLORS.black,
+    // color: THEME.COLORS.black,
     fontSize: RF(60),
   },
   crossContainer: {
@@ -153,6 +169,35 @@ const styles = StyleSheet.create({
   cross: {
     width: "100%",
     height: "100%",
+  },
+  title: {
+    fontSize: THEME.FONTS.SIZE.XSMALL,
+    color: THEME.COLORS.disabledTextLight,
+  },
+  subTitle: {
+    fontSize: THEME.FONTS.SIZE.LARGE,
+    color: THEME.COLORS.blacklight,
+    fontWeight: "bold",
+  },
+  backIcon: {
+    height: RF(12),
+    width: RF(12),
+  },
+  slideSubTitle: {
+    textAlign: "center",
+    fontSize: THEME.FONTS.SIZE.XXSMALL,
+    color: THEME.COLORS.blacklight,
+    margin: RF(30),
+  },
+  tagTitle: {
+    fontSize: THEME.FONTS.SIZE.XXSMALL,
+    color: THEME.COLORS.disabledTextLight,
+  },
+  bottomContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    margin: RF(30),
   },
 });
 

@@ -10,8 +10,8 @@ import {
 import FastImage from "react-native-fast-image";
 import SplashScreen from "react-native-splash-screen";
 import { ICONS } from "../../asset";
+import AppHeader from "../../shared/components/AppHeader";
 import AppText from "../../shared/components/AppText";
-import PinModal from "../../shared/components/PinModal";
 import PrimaryButton from "../../shared/components/PrimaryButton";
 import { GenericNavigation } from "../../shared/utils/models/types";
 import { THEME } from "../../shared/utils/theme";
@@ -22,25 +22,35 @@ import styles from "./style";
 // }
 interface Props extends GenericNavigation {}
 
-const Home = (props: Props) => {
-  const [modalVisible, setModalVisible] = useState(false);
-
+const Biometry = (props: Props) => {
   useEffect(() => {
     SplashScreen.hide();
   }, []);
   return (
     <>
-      <StatusBar backgroundColor={THEME.COLORS.secondaryDarkBackground} />
+      <StatusBar backgroundColor={THEME.COLORS.lightGray} />
       <SafeAreaView style={[{ flex: 1 }]}>
+        <AppHeader
+          showBack
+          // rightIcon={ICONS.backArrow}
+          title="Biometry"
+          // theme="dark"
+          absolute
+        />
+        {/* <AppHeader title="Security Settings" showShadow showBack /> */}
+
         <View
           // key={props.item.key}
           style={[styles.container]}
         >
           <View
-            style={{ flex: 5, justifyContent: "center", alignItems: "center" }}
+            style={{
+              flex: 1,
+              // justifyContent: "center",
+            }}
           >
             <FastImage
-              source={ICONS.logo}
+              source={ICONS.scanner}
               style={styles.slideImage}
               resizeMode={FastImage.resizeMode.contain}
             />
@@ -49,46 +59,13 @@ const Home = (props: Props) => {
               and comfortably
             </AppText>
           </View>
-          <View style={{ flex: 1 }}>
-            <View style={styles.actionContainer}>
-              <PrimaryButton
-                disabled={false}
-                textStyle={{ fontSize: THEME.FONTS.SIZE.XSMALL }}
-                title="Create Wallet "
-                onPress={() => setModalVisible(true)}
-              />
-              <PrimaryButton
-                disabled={true}
-                textStyle={{ fontSize: THEME.FONTS.SIZE.XSMALL }}
-                title="Restore Wallet "
-                // onPress={onEnableBiometry}
-              />
-            </View>
-          </View>
-          <View style={styles.bottomContainer}>
-            <AppText style={[styles.tagTitle]}>{"Powerd By "}</AppText>
-            <AppText style={[styles.tagTitle, { fontWeight: "bold" }]}>
-              {"EgonSwap"}
-            </AppText>
-          </View>
-          <PinModal
-            visible={modalVisible}
-            title="Security Check"
-            subTitle="Enter New Pin"
-            onConfirm={() => {
-              console.log("---confirm---");
-              setModalVisible(false);
-              // props.navigation?.navigate("Biometry");
-              props.navigation?.navigate("Seed");
-            }}
-          />
         </View>
       </SafeAreaView>
     </>
   );
 };
 
-export default Home;
+export default Biometry;
 
 // const styles = StyleSheet.create({
 //   container: {
