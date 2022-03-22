@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
-import { THEME } from "../../shared/utils/theme";
-import { RF } from "../../shared/utils/theme/responsive";
+import { THEME } from "../../../shared/utils/theme";
+import { RF } from "../../../shared/utils/theme/responsive";
 
 const styles = StyleSheet.create({
   container: {

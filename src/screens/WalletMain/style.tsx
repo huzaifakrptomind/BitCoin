@@ -5,7 +5,7 @@ import { RF } from "../../shared/utils/theme/responsive";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: THEME.COLORS.lightGray,
+    backgroundColor: THEME.COLORS.secondaryDarkBackground,
   },
   slideImage: { width: RF(25), height: RF(25) },
   slideSubTitle: {
@@ -17,6 +17,27 @@ const styles = StyleSheet.create({
     marginHorizontal: RF(30),
     lineHeight: THEME.FONTS.SIZE.LARGE,
     // fontFamily: "Regular",
+  },
+  slideTitle: {
+    fontSize: THEME.FONTS.SIZE.XXXXXLARGE,
+    textAlign: "center",
+    fontWeight: "bold",
+    color: THEME.COLORS.white,
+    alignSelf: "flex-end",
+  },
+  dollerTitle: {
+    fontSize: THEME.FONTS.SIZE.XLARGE,
+    textAlign: "center",
+    fontWeight: "bold",
+    color: THEME.COLORS.white,
+    paddingTop: THEME.FONTS.SIZE.SMALL,
+  },
+  decimalTitle: {
+    fontSize: THEME.FONTS.SIZE.XLARGE,
+    textAlign: "center",
+    fontWeight: "bold",
+    color: THEME.COLORS.white,
+    paddingTop: THEME.FONTS.SIZE.SMALL,
   },
   flatView: {
     flex: 2.5,

@@ -8,6 +8,11 @@ import Security from "./src/screens/Security";
 import SplashScreen from "react-native-splash-screen";
 import Seed from "./src/screens/Seed";
 import Biometry from "./src/screens/Biometry";
+import WalletMain from "./src/screens/WalletMain";
+import Coin from "./src/screens/Coin";
+import Receive from "./src/screens/Receive";
+import Wallet from "./src/screens/Wallet";
+import BottomView from "./src/screens/BottomView";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -26,6 +31,11 @@ export default function App() {
         <Stack.Screen name="Security" component={Security} />
         <Stack.Screen name="Seed" component={Seed} />
         <Stack.Screen name="Biometry" component={Biometry} />
+        <Stack.Screen name="Wallet" component={Wallet} />
+        <Stack.Screen name="WalletMain" component={WalletMain} />
+        <Stack.Screen name="Coin" component={Coin} />
+        <Stack.Screen name="Receive" component={Receive} />
+        <Stack.Screen name="BottomView" component={BottomView} />
       </Stack.Navigator>
     </NavigationContainer>
   );

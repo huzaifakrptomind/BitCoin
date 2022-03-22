@@ -10,6 +10,7 @@ const ICONS = {
   backArrow: require("../asset/icons/backArrow.png"),
   crossCircle: require("../asset/icons/cross-circle.png"),
   scanner: require("../asset/icons/scanner.png"),
+  copy: require("../asset/icons/copy.png"),
 
   BACKSPACE: require("./icons/backspace.png"),
   TX_SENT: require("./icons/sentLight.png"),

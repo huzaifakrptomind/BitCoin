@@ -79,7 +79,7 @@ const Item = ({ title, id }) => (
   </View>
 );
 
-const Seed = (props: Props) => {
+const Receive = (props: Props) => {
   useEffect(() => {
     SplashScreen.hide();
   }, []);
@@ -136,4 +136,4 @@ const Seed = (props: Props) => {
   );
 };
 
-export default Seed;
+export default Receive;

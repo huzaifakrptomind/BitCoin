@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     fontSize: THEME.FONTS.SIZE.XXLARGE,
     // fontFamily: THEME.FONTS.TYPE.SEMIBOLD,
     fontWeight: "500",
-    color: THEME.COLORS.disabledTextLight,
+    // color: THEME.COLORS.disabledTextLight,
     // position: "relative",
   },
   numberContainer: {

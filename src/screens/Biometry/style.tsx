@@ -10,31 +10,41 @@ const styles = StyleSheet.create({
   slideTitle: {
     fontSize: THEME.FONTS.SIZE.XLARGE,
     textAlign: "center",
-    marginTop: THEME.MARGIN.HIGH,
-    marginBottom: THEME.MARGIN.NORMAL,
+    fontWeight: "bold",
+    color: THEME.COLORS.blacklight,
   },
-  slideImage: { width: RF(120), height: RF(120), alignSelf: "center" },
   slideSubTitle: {
     textAlign: "center",
-    fontSize: THEME.FONTS.SIZE.XXSMALL,
-    color: THEME.COLORS.white,
-    margin: RF(30),
+    fontSize: THEME.FONTS.SIZE.SMALL,
+    color: THEME.COLORS.disabledTextLight,
+    margin: RF(20),
+    lineHeight: THEME.FONTS.SIZE.LARGE,
   },
-  actionContainer: {
-    position: "absolute",
-    bottom: RF(75),
-    alignSelf: "center",
-    flexDirection: "row",
+  slideImage: {
+    width: RF(180),
+    height: RF(180),
   },
-  tagTitle: {
-    fontSize: THEME.FONTS.SIZE.XXSMALL,
-    color: THEME.COLORS.white,
-  },
-  bottomContainer: {
-    flexDirection: "row",
+  topView: {
+    flex: 2.5,
+    justifyContent: "flex-end",
     alignItems: "center",
+    // backgroundColor: "gray",
+  },
+  middleView: {
+    flex: 2,
+    justifyContent: "flex-end",
+    alignItems: "center",
+    // backgroundColor: "blue",
+  },
+  bottomView: {
+    flex: 1.5,
+    // backgroundColor: "green",
     justifyContent: "center",
-    margin: RF(10),
+  },
+  bottombtn: {
+    width: RF(290),
+    height: RF(45),
+    borderRadius: RF(7),
   },
 });
 

@@ -17,6 +17,7 @@ import PrimaryButton from "../../shared/components/PrimaryButton";
 import { GenericNavigation } from "../../shared/utils/models/types";
 import { THEME } from "../../shared/utils/theme";
 import { RF } from "../../shared/utils/theme/responsive";
+
 import styles from "./style";
 interface Props extends GenericNavigation {}
 
@@ -79,61 +80,41 @@ const Item = ({ title, id }) => (
   </View>
 );
 
-const Seed = (props: Props) => {
-  useEffect(() => {
-    SplashScreen.hide();
-  }, []);
+const WalletMain = (props: Props) => {
   const renderItem = ({ item }) => <Item title={item.title} id={item.id} />;
 
   return (
     <>
-      <StatusBar backgroundColor={THEME.COLORS.lightGray} />
+      <StatusBar backgroundColor={THEME.COLORS.secondaryDarkBackground} />
       <SafeAreaView style={[{ flex: 1 }]}>
-        <AppHeader showBack showLogo title="Seed" absolute />
+        <AppHeader title="WalletMain" showBack showLeft absolute />
         <View style={[styles.container]}>
-          <AppText style={[styles.slideSubTitle]}>
-            Sed porta nisl orci. Nullam ex magna, tristique ut ligula a,
-            eleifend sodales tellus. Nunc sed molestie nisl. Sed porta nisl
-            orci. Nullam ex magna, tristique ut ligula a, eleifend sodales
-            tellus. Nunc sed molestie nisl.
-          </AppText>
-          <View style={styles.flatView}>
-            <FlatList
-              contentContainerStyle={{}}
-              data={DATA}
-              numColumns={2}
-              renderItem={renderItem}
-              keyExtractor={(item) => item.id}
-            />
+          <View
+            style={{
+              flex: 2,
+              backgroundColor: THEME.COLORS.secondaryDarkBackground,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <View style={{ flexDirection: "row" }}>
+              <AppText style={styles.dollerTitle}>$</AppText>
+              <AppText style={styles.slideTitle}>3,561. </AppText>
+              <AppText style={styles.decimalTitle}>32</AppText>
+            </View>
+            <View style={{ flexDirection: "row" }}>
+              {/* <Text>Income</Text>
+              <Text>Income</Text> */}
+              <View style={{ flexDirection: "row" }}></View>
+            </View>
           </View>
-          <View style={styles.copyView}>
-            <FastImage
-              source={ICONS.copy}
-              style={styles.slideImage}
-              resizeMode={FastImage.resizeMode.contain}
-            />
-            <AppText style={styles.slideCopytitle}>Copy</AppText>
-          </View>
-          <View style={styles.bottomView}>
-            <PrimaryButton
-              buttonStyle={styles.bottombtn}
-              title="I've Written It Down"
-              onPress={() => props.navigation?.navigate("Biometry")}
-            />
-            <PrimaryButton
-              buttonStyle={[
-                styles.bottombtn,
-                { borderWidth: RF(1), borderColor: THEME.COLORS.blacklight },
-              ]}
-              title="Get New Seed"
-              disabled={true}
-              onPress={() => props.navigation?.navigate("Biometry")}
-            />
-          </View>
+          <View
+            style={{ flex: 4, backgroundColor: THEME.COLORS.lightGray }}
+          ></View>
         </View>
       </SafeAreaView>
     </>
   );
 };
 
-export default Seed;
+export default WalletMain;

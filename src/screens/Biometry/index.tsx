@@ -30,34 +30,39 @@ const Biometry = (props: Props) => {
     <>
       <StatusBar backgroundColor={THEME.COLORS.lightGray} />
       <SafeAreaView style={[{ flex: 1 }]}>
-        <AppHeader
-          showBack
-          // rightIcon={ICONS.backArrow}
-          title="Biometry"
-          // theme="dark"
-          absolute
-        />
-        {/* <AppHeader title="Security Settings" showShadow showBack /> */}
-
+        <AppHeader title="Biometry" absolute />
         <View
           // key={props.item.key}
           style={[styles.container]}
         >
-          <View
-            style={{
-              flex: 1,
-              // justifyContent: "center",
-            }}
-          >
+          <View style={styles.topView}>
             <FastImage
               source={ICONS.scanner}
               style={styles.slideImage}
               resizeMode={FastImage.resizeMode.contain}
             />
-            <AppText style={[styles.slideSubTitle]}>
-              Your finances and tokens are always under control, use them safely
-              and comfortably
+          </View>
+          <View style={styles.middleView}>
+            <AppText style={styles.slideTitle}>Increase Your Security </AppText>
+            <AppText style={styles.slideSubTitle}>
+              Activate biometrics in your wallet to make it even more secure
             </AppText>
+          </View>
+          <View style={styles.bottomView}>
+            <PrimaryButton
+              buttonStyle={styles.bottombtn}
+              title="Enable Biometry Now"
+              onPress={() => props.navigation?.navigate("BottomView")}
+            />
+            <PrimaryButton
+              buttonStyle={[
+                styles.bottombtn,
+                { borderWidth: RF(1), borderColor: THEME.COLORS.blacklight },
+              ]}
+              title="Skip"
+              disabled={true}
+              onPress={() => props.navigation?.goBack()}
+            />
           </View>
         </View>
       </SafeAreaView>
@@ -66,18 +71,3 @@ const Biometry = (props: Props) => {
 };
 
 export default Biometry;
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: "center",
-//     alignItems: "center",
-//   },
-//   sliderDoneButton: {
-//     color: THEME.COLORS.yellow,
-//     // fontFamily: THEME.FONTS.TYPE.REGULAR,
-//     fontSize: THEME.FONTS.SIZE.SMALL,
-//     marginVertical: THEME.MARGIN.NORMAL,
-//     alignSelf: "center",
-//   },
-// });

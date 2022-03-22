@@ -61,7 +61,7 @@ const Home = (props: Props) => {
                 disabled={true}
                 textStyle={{ fontSize: THEME.FONTS.SIZE.XSMALL }}
                 title="Restore Wallet "
-                // onPress={onEnableBiometry}
+                // onPress={props.navigation?.goBack}
               />
             </View>
           </View>
