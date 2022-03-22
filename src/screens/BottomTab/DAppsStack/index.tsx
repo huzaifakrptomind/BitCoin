@@ -21,6 +21,52 @@ import { RF } from "../../../shared/utils/theme/responsive";
 import styles from "./style";
 interface Props extends GenericNavigation {}
 
+const DATA = [
+  {
+    id: "1",
+    title: "Reality",
+  },
+  {
+    id: "2",
+    title: "Realitys",
+  },
+  {
+    id: "3",
+    title: "Third",
+  },
+  {
+    id: "4",
+    title: "Reality",
+  },
+  {
+    id: "5",
+    title: "Realitys",
+  },
+  {
+    id: "6",
+    title: "Third",
+  },
+  {
+    id: "7",
+    title: "Reality",
+  },
+  {
+    id: "8",
+    title: "Realitys",
+  },
+  {
+    id: "9",
+    title: "Third",
+  },
+  {
+    id: "10",
+    title: "Realitys",
+  },
+  {
+    id: "11",
+    title: "Third",
+  },
+];
 const Item = ({ title, id }) => (
   <View style={styles.item}>
     <View style={styles.outerView}>
