@@ -20,6 +20,7 @@ import { THEME } from "../../shared/utils/theme";
 import { RF } from "../../shared/utils/theme/responsive";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import AntDesign from "react-native-vector-icons/AntDesign";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 // // Ionicons
 import styles from "./style";
@@ -157,23 +158,37 @@ const BottomView = (props: Props) => {
               iconName = focused
                 ? "ios-information-circle"
                 : "ios-information-circle-outline";
-            } else if (route.name === "Settings") {
+            }  if (route.name === "Settings") {
               iconName = focused ? "ios-list-box" : "ios-list";
             }
+            if (route.name === "Dapps") { 
+              return    <AntDesign name="appstore-o"size={25} color={color} />;
+            }
+            if (route.name === "News") { 
+              return    <AntDesign name="earth"size={25} color={color} />;
+            }
+            if (route.name === "Setting") { 
+              return    <AntDesign name="setting"size={25} color={color} />;
+            }
+            if(route.name === "Dex"){
+              return    <AntDesign name="retweet"size={25} color={color} />;
+            }
+            // appstore-o retweet
 
-            return <Ionicons name={iconName} size={size} color={color} />;
+            // return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: "red",
-          tabBarInactiveTintColor: "gray",
+          tabBarLabelStyle:{fontSize:RF(12)},
+          tabBarActiveTintColor: THEME.COLORS.skyBlue,
+          tabBarInactiveTintColor: THEME.COLORS.disabledTextLight,
         })}
       >
-        <Tab.Screen name="WalletMain" component={WalletMain} />
-        <Tab.Screen name="Dapps" component={DAppsStack}   />
-        <Tab.Screen name="News" component={NewsStack} options={{
+            <Tab.Screen name="Dapps" component={DAppsStack}   />
+            <Tab.Screen name="News" component={NewsStack} />
+           <Tab.Screen name="WalletMain" component={WalletMain} options={{
             tabBarButton: (props) => <CustomButton {...props} />,
           }} />
-        <Tab.Screen name="asd" component={SettingsScreen} />
-        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Dex" component={HomeScreen} />
+        <Tab.Screen name="Setting" component={SettingsScreen} />
         {/* <Tab.Screen name="WalletMain" component={WalletMain} /> */}
       </Tab.Navigator>
     </>
