@@ -83,9 +83,9 @@ const styles = StyleSheet.create({
   },
   middleIcon: {
     bottom: 18,
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    width: 70,
+    height: 70,
+    borderRadius: 35,
     backgroundColor: THEME.COLORS.skyBlue,
     justifyContent: "center",
     alignItems: "center",

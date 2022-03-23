@@ -47,11 +47,11 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
   },
   coinSubTitle:{
-    fontSize: THEME.FONTS.SIZE.XXXSMALL,
+    fontSize: THEME.FONTS.SIZE.XXSMALL,
     color: THEME.COLORS.disabledTextLight,
   },
   coinUsd:{
-    alignSelf:'center',fontSize:THEME.FONTS.SIZE.XSMALL,color:THEME.COLORS.black,fontWeight:'700',paddingTop:THEME.PADDING.LOW
+    alignSelf:'center',fontSize:THEME.FONTS.SIZE.SMALL,color:THEME.COLORS.black,fontWeight:'700',paddingTop:THEME.PADDING.LOW
   },
   slideTitle: {
     fontSize: THEME.FONTS.SIZE.XXXXXLARGE,
@@ -86,6 +86,15 @@ const styles = StyleSheet.create({
     // backgroundColor: "green",
     justifyContent: "center",
   },
+  cardView:{
+    backgroundColor:THEME.COLORS.white,width:RF(135),height:RF(187),borderRadius:RF(15),elevation:RF(3),margin:RF(12),
+  },
+  amountTitle:{
+    textAlign:'center',fontSize:THEME.FONTS.SIZE.SMALL,color:THEME.COLORS.white
+  },
+  cardDownView:{
+    borderBottomLeftRadius:RF(15),borderBottomRightRadius:RF(15),height:RF(25)
+  }
  
  
 });

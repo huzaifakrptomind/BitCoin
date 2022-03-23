@@ -20,7 +20,7 @@ import { THEME } from "../../shared/utils/theme";
 import { RF } from "../../shared/utils/theme/responsive";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import Icon from "react-native-vector-icons/Ionicons";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 // // Ionicons
 import styles from "./style";
 import DAppsStack from "../BottomTab/DAppsStack";
@@ -44,23 +44,28 @@ function SettingsScreen() {
     </View>
   );
 }
-const BottomTab = ({ type, color, size = 24, isFocused, index }) => {
-  const icon = index == 0 ? "home" : "heart";
+const BottomTab = ({ type, color, size = 24, isFocused, index,name }) => {
+  const icon = index == 0 ? "home" : "heart"  ;
+  
   const gradient = index == 1;
   return (
     <View>
       {gradient ? (
         <View style={styles.middleIcon}>
           <AppIcon
-            name={"shopping-basket"}
+            name={"wallet-outline"}
             type={type}
             size={size}
             color={"white"}
           />
+          <Text style={{color:THEME.COLORS.white}}>Wallet</Text>
         </View>
       ) : (
         <View style={{}}>
           <AppIcon name={icon} type={type} size={size} color={color} />
+          <Text style={{color : isFocused
+          ? THEME.COLORS.skyBlue
+          : THEME.COLORS.disabledTextLight}}>{name}</Text>
         </View>
       )}
     </View>
@@ -85,8 +90,8 @@ const MyTabBar = ({ state, descriptors, navigation }) => {
         };
 
         const color = isFocused
-          ? THEME.COLORS.blacklight
-          : THEME.COLORS.lightGray;
+          ? THEME.COLORS.skyBlue
+          : THEME.COLORS.disabledTextLight;
 
         return (
           <TouchableOpacity
@@ -97,48 +102,78 @@ const MyTabBar = ({ state, descriptors, navigation }) => {
           >
             <BottomTab
               type={
-                index !== 1 ? Icons.MaterialCommunityIcons : Icons.FontAwesome5
+                index !== 1 ? Icons.FontAwesome5  : Icons.MaterialCommunityIcons
               }
               index={index}
               isFocused={isFocused}
-              size={24}
+              size={30}
               color={color}
+              name={route.name}
             />
+            {/* <Text>Sasas</Text> */}
           </TouchableOpacity>
         );
       })}
     </View>
   );
 };
+const CustomButton = ({ children, onPress }) => (
+  <TouchableOpacity
+    style={{
+      top: -20,
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+    onPress={onPress}
+  >
+    <View
+      style={{
+        width: 70,
+        height: 70,
+        borderRadius: 35,
+        backgroundColor: THEME.COLORS.skyBlue,
+        justifyContent:'center',
+        alignItems:'center'
+      }}
+    >
+      <MaterialCommunityIcons name="wallet-outline" size={30} color={"white"} />
+      <Text style={{color:THEME.COLORS.white,fontWeight:'bold'}}>Wallet</Text>
 
+    </View>
+  </TouchableOpacity>
+);
 const BottomView = (props: Props) => {
   return (
     <>
       {/* <AppHeader title="WalletMain" showBack showLeft absolute /> */}
       <Tab.Navigator
-        tabBar={(props) => <MyTabBar {...props} />}
+        // tabBar={(props) => <MyTabBar {...props} />}
         screenOptions={({ route }) => ({
           headerShown: false,
-          // tabBarIcon: ({ focused, color, size }) => {
-          //   let iconName;
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
 
-          //   if (route.name === "Home") {
-          //     iconName = focused
-          //       ? "ios-information-circle"
-          //       : "ios-information-circle-outline";
-          //   } else if (route.name === "Settings") {
-          //     iconName = focused ? "ios-list-box" : "ios-list";
-          //   }
+            if (route.name === "Home") {
+              iconName = focused
+                ? "ios-information-circle"
+                : "ios-information-circle-outline";
+            } else if (route.name === "Settings") {
+              iconName = focused ? "ios-list-box" : "ios-list";
+            }
 
-          //   return <Ionicons name={iconName} size={size} color={color} />;
-          // },
-          // tabBarActiveTintColor: "tomato",
-          // tabBarInactiveTintColor: "gray",
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: "red",
+          tabBarInactiveTintColor: "gray",
         })}
       >
         <Tab.Screen name="WalletMain" component={WalletMain} />
-        <Tab.Screen name="Dapps" component={DAppsStack} />
-        <Tab.Screen name="News" component={NewsStack} />
+        <Tab.Screen name="Dapps" component={DAppsStack}   />
+        <Tab.Screen name="News" component={NewsStack} options={{
+            tabBarButton: (props) => <CustomButton {...props} />,
+          }} />
+        <Tab.Screen name="asd" component={SettingsScreen} />
+        <Tab.Screen name="Home" component={HomeScreen} />
         {/* <Tab.Screen name="WalletMain" component={WalletMain} /> */}
       </Tab.Navigator>
     </>

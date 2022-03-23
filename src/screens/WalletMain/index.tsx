@@ -60,7 +60,7 @@ const DATA = [
 const Item = ({ title, id,image,color,rate }) => (
   <View style={{}}>
     <View style={{}}>
-      <View style={{backgroundColor:THEME.COLORS.white,width:RF(135),height:RF(187),borderRadius:RF(15),elevation:RF(3),margin:RF(12),}}>
+      <View style={styles.cardView}>
       <FastImage
         source={image}
         style={styles.coinImage}
@@ -74,14 +74,11 @@ const Item = ({ title, id,image,color,rate }) => (
         </View>
       <AppText style={styles.coinUsd} >{'0.00'}</AppText>
       </View>
-      <View style={{backgroundColor:color,borderBottomLeftRadius:RF(15),flex:1,borderBottomRightRadius:RF(15)}}>
-      <Text>asas</Text>
+      <View style={[styles.cardDownView,{backgroundColor:color,}]}>
+      <AppText style={styles.amountTitle}>0.00 USD</AppText>
+      </View>    
       </View>
-     
-      </View>
-      {/* <View style={{}}>
-        <AppText style={{}}>{title}</AppText> $51206.00 -1.01%
-      </View> */}
+
     </View>
   </View>
 );
