@@ -37,6 +37,13 @@ export const THEME = {
     biometryCircleButtonColor: "#414A5B",
     reddishBackground: "#e6d7d7",
     modalBackground: "rgba(0,0,0,0.4)",
+    bitcoinColor:"#F7931A",
+    etherumColor:"#2075C3",
+    dashColor:"#0986D3",
+    dogeCOlor:"#C3A723",
+    dashRateColor:"green"
+
+
   },
   FONTS: {
     SIZE: {

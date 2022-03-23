@@ -41,8 +41,9 @@ interface Props {
   headerStyle?: StyleProp<ViewStyle>;
   showSearchBar?: boolean;
   onPressLogo?: () => void;
-
+  statusbarColor:string;
   showShadow?: boolean;
+  headerBackgroundColor:string
 }
 
 const AppHeader = (props: Props) => {
@@ -54,6 +55,8 @@ const AppHeader = (props: Props) => {
     theme = "light",
     absolute,
     showShadow,
+    statusbarColor,
+    headerBackgroundColor
   } = props;
 
   const insets = useSafeAreaInsets();
@@ -63,7 +66,7 @@ const AppHeader = (props: Props) => {
     <>
       <StatusBar
         barStyle={theme == "light" ? "dark-content" : "light-content"}
-        backgroundColor={THEME.COLORS.lightGray}
+        backgroundColor={props.statusbarColor}
       />
       <View
         style={[
@@ -75,7 +78,7 @@ const AppHeader = (props: Props) => {
                 : insets.top * 1.3,
           },
           {
-            backgroundColor: THEME.COLORS.lightGray,
+            backgroundColor: props.headerBackgroundColor,
           },
           absolute && {
             position: "absolute",

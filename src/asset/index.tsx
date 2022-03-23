@@ -11,6 +11,14 @@ const ICONS = {
   crossCircle: require("../asset/icons/cross-circle.png"),
   scanner: require("../asset/icons/scanner.png"),
   copy: require("../asset/icons/copy.png"),
+  downIncome: require("../asset/icons/downIncome.png"),
+  upIncome: require("../asset/icons/downIncome.png"),
+  bitcoin: require("../asset/coins/bitcoin.png"),
+  etherum: require("../asset/coins/etherum.png"),
+  dash: require("../asset/coins/dash.png"),
+  doge: require("../asset/coins/doge.png"),
+
+
 
   BACKSPACE: require("./icons/backspace.png"),
   TX_SENT: require("./icons/sentLight.png"),

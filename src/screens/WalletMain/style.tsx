@@ -7,16 +7,51 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: THEME.COLORS.secondaryDarkBackground,
   },
-  slideImage: { width: RF(25), height: RF(25) },
+  firstContainer:{
+    flex: 1.8,
+    backgroundColor: THEME.COLORS.secondaryDarkBackground,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  secondContainer:{
+    flex: 4.2, backgroundColor:"#F7F7F7",
+    // margin:RF(10) 
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  firstUpperView:{
+    flexDirection: "row" 
+  },
+  firstBottomView:{
+    flexDirection: "row",margin:RF(20)
+  },
+  firstBottomRightView:{
+    flexDirection:'row'
+  },
+  firstBottomLeftView:{
+    flexDirection:'row',paddingRight:RF(20),
+  },
+  firstBottomInerRightView:{
+    flexDirection:'column',paddingLeft:RF(3)
+  },
+  slideImage: { width: RF(18), height: RF(18),alignSelf:'center',},
+  coinImage: { width: RF(70), height: RF(70),alignSelf:'center',marginTop:RF(15)},
   slideSubTitle: {
-    flex: 1.5,
     textAlign: "center",
+    fontSize: THEME.FONTS.SIZE.XSMALL,
+    color: THEME.COLORS.white,
+  },
+  coinTitle:{
     fontSize: THEME.FONTS.SIZE.SMALL,
+    // color: THEME.COLORS.bitcoinColor,
+    fontWeight:'bold',
+  },
+  coinSubTitle:{
+    fontSize: THEME.FONTS.SIZE.XXXSMALL,
     color: THEME.COLORS.disabledTextLight,
-    marginTop: RF(70),
-    marginHorizontal: RF(30),
-    lineHeight: THEME.FONTS.SIZE.LARGE,
-    // fontFamily: "Regular",
+  },
+  coinUsd:{
+    alignSelf:'center',fontSize:THEME.FONTS.SIZE.XSMALL,color:THEME.COLORS.black,fontWeight:'700',paddingTop:THEME.PADDING.LOW
   },
   slideTitle: {
     fontSize: THEME.FONTS.SIZE.XXXXXLARGE,
@@ -39,62 +74,20 @@ const styles = StyleSheet.create({
     color: THEME.COLORS.white,
     paddingTop: THEME.FONTS.SIZE.SMALL,
   },
-  flatView: {
-    flex: 2.5,
-    //  backgroundColor: "blue".
-  },
-  slideCopytitle: {
+  incomeTitle:{
+    fontSize: THEME.FONTS.SIZE.XXXSMALL,
     textAlign: "center",
-    fontSize: THEME.FONTS.SIZE.SMALL,
-    color: THEME.COLORS.disabledTextLight,
-    paddingLeft: RF(10),
-  },
-  copyView: {
-    flex: 0.5,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    fontWeight: "bold",
+    color: THEME.COLORS.white,
+    // paddingTop: THEME.FONTS.SIZE.XSMALL,
   },
   bottomView: {
     flex: 1.5,
     // backgroundColor: "green",
     justifyContent: "center",
   },
-  item: {
-    justifyContent: "center",
-    marginHorizontal: RF(10),
-    marginTop: RF(10),
-  },
-  titleItem: {
-    fontSize: THEME.FONTS.SIZE.XXSMALL,
-    color: THEME.COLORS.white,
-  },
-  innerItemText: {
-    fontSize: THEME.FONTS.SIZE.XSMALL,
-    color: THEME.COLORS.disabledTextLight,
-  },
-  outerView: {
-    width: RF(150),
-    height: RF(27),
-    backgroundColor: THEME.COLORS.buttonGray,
-    borderRadius: RF(20),
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  leftView: {
-    width: RF(22),
-    height: RF(22),
-    backgroundColor: THEME.COLORS.skyBlue,
-    borderRadius: RF(20),
-    justifyContent: "center",
-    alignItems: "center",
-    marginHorizontal: RF(3),
-  },
-  rightView: { paddingLeft: RF(20) },
-  bottombtn: {
-    width: RF(290),
-    borderRadius: RF(7),
-  },
+ 
+ 
 });
 
 export default styles;
