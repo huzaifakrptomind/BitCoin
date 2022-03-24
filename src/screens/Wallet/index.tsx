@@ -69,7 +69,7 @@ const DATA = [
 const Item = ({ title, id, image, color, rate, props }) => (
   <TouchableOpacity
     style={{}}
-    onPress={() => props.navigation.navigate("CoinDetails")}
+    onPress={() => props.navigation.navigate("Receive")}
   >
     <View style={styles.cardView}>
       <View style={styles.lefView}>

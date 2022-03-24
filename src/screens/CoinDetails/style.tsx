@@ -6,17 +6,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: THEME.COLORS.white,
+    // margin: RF(20),
   },
-  slideImage: { width: RF(90), height: RF(90), margin: RF(20) },
+  slideImage: { width: RF(90), height: RF(90), margin: THEME.MARGIN.MID_LOW },
   slideSubTitle: {
-    flex: 1.5,
+    fontSize: THEME.FONTS.SIZE.XLARGE,
+    color: THEME.COLORS.black,
     textAlign: "center",
-    fontSize: THEME.FONTS.SIZE.SMALL,
-    color: THEME.COLORS.disabledTextLight,
-    marginTop: RF(70),
-    marginHorizontal: RF(30),
-    lineHeight: THEME.FONTS.SIZE.LARGE,
-    // fontFamily: "Regular",
+  },
+  amountTitle: {
+    fontSize: THEME.FONTS.SIZE.LARGE,
+    color: THEME.COLORS.secondaryDarkBackground,
+    // marginLeft: RF(5),
+  },
+  rateTitle: {
+    fontSize: THEME.FONTS.SIZE.XXSMALL,
+    color: THEME.COLORS.black,
+    margin: RF(3),
   },
   flatView: {
     flex: 2.5,
@@ -25,8 +31,9 @@ const styles = StyleSheet.create({
   slideCopytitle: {
     textAlign: "center",
     fontSize: THEME.FONTS.SIZE.SMALL,
-    color: THEME.COLORS.disabledTextLight,
-    paddingLeft: RF(10),
+    color: THEME.COLORS.black,
+    fontWeight: "600",
+    // paddingLeft: RF(10),
   },
   copyView: {
     flex: 0.5,
@@ -49,8 +56,14 @@ const styles = StyleSheet.create({
     color: THEME.COLORS.white,
   },
   innerItemText: {
-    fontSize: THEME.FONTS.SIZE.XSMALL,
-    color: THEME.COLORS.disabledTextLight,
+    fontSize: THEME.FONTS.SIZE.SMALL,
+    color: THEME.COLORS.black,
+    marginLeft: RF(10),
+  },
+  questionImage: {
+    width: RF(20),
+    height: RF(20),
+    // alignSelf: "center",
   },
   outerView: {
     width: RF(150),

@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
 } from "react-native";
 import FastImage from "react-native-fast-image";
 import SplashScreen from "react-native-splash-screen";
@@ -48,33 +49,32 @@ const DATA = [
     color: THEME.COLORS.dogeCOlor,
   },
 ];
-const Item = ({ title, id, image, color, rate }) => (
-  <View style={{}}>
-    <View style={{}}>
-      <View style={styles.cardView}>
-        <FastImage
-          source={image}
-          style={styles.coinImage}
-          resizeMode={FastImage.resizeMode.contain}
-        />
-        <View style={{ padding: THEME.PADDING.LOW }}>
-          <AppText style={[styles.coinTitle, { color: color }]}>
-            {title}
+const Item = ({ title, id, image, color, rate, props }) => (
+  <TouchableOpacity
+    style={{}}
+    onPress={() => props.navigation.navigate("CoinDetails")}
+  >
+    <View style={styles.cardView}>
+      <FastImage
+        source={image}
+        style={styles.coinImage}
+        resizeMode={FastImage.resizeMode.contain}
+      />
+      <View style={{ padding: THEME.PADDING.LOW }}>
+        <AppText style={[styles.coinTitle, { color: color }]}>{title}</AppText>
+        <View style={{ flexDirection: "row" }}>
+          <AppText style={styles.coinSubTitle}>$51206.00 </AppText>
+          <AppText style={[styles.coinSubTitle, { color: rate }]}>
+            -1.01%
           </AppText>
-          <View style={{ flexDirection: "row" }}>
-            <AppText style={styles.coinSubTitle}>$51206.00 </AppText>
-            <AppText style={[styles.coinSubTitle, { color: rate }]}>
-              -1.01%
-            </AppText>
-          </View>
-          <AppText style={styles.coinUsd}>{"0.00"}</AppText>
         </View>
-        <View style={[styles.cardDownView, { backgroundColor: color }]}>
-          <AppText style={styles.amountTitle}>0.00 USD</AppText>
-        </View>
+        <AppText style={styles.coinUsd}>{"0.00"}</AppText>
+      </View>
+      <View style={[styles.cardDownView, { backgroundColor: color }]}>
+        <AppText style={styles.amountTitle}>0.00 USD</AppText>
       </View>
     </View>
-  </View>
+  </TouchableOpacity>
 );
 
 const WalletMain = (props: Props) => {
@@ -85,6 +85,7 @@ const WalletMain = (props: Props) => {
       image={item.image}
       color={item.color}
       rate={item.rateColor}
+      props={props}
     />
   );
 

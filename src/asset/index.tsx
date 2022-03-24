@@ -17,8 +17,7 @@ const ICONS = {
   etherum: require("../asset/coins/etherum.png"),
   dash: require("../asset/coins/dash.png"),
   doge: require("../asset/coins/doge.png"),
-
-
+  question: require("../asset/icons/question.png"),
 
   BACKSPACE: require("./icons/backspace.png"),
   TX_SENT: require("./icons/sentLight.png"),

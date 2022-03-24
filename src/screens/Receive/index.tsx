@@ -11,6 +11,7 @@ import {
 import FastImage from "react-native-fast-image";
 import SplashScreen from "react-native-splash-screen";
 import { ICONS } from "../../asset";
+import AddressInput from "../../shared/components/AddressInput";
 import AppHeader from "../../shared/components/AppHeader";
 import AppText from "../../shared/components/AppText";
 import PrimaryButton from "../../shared/components/PrimaryButton";
@@ -87,46 +88,84 @@ const Receive = (props: Props) => {
 
   return (
     <>
-      <StatusBar backgroundColor={THEME.COLORS.lightGray} />
+      {/* <StatusBar backgroundColor={THEME.COLORS.lightGray} /> */}
       <SafeAreaView style={[{ flex: 1 }]}>
-        <AppHeader showBack showLogo title="Seed" absolute />
+        <AppHeader showBack showLogo title="Receive" absolute />
         <View style={[styles.container]}>
-          <AppText style={[styles.slideSubTitle]}>
-            Sed porta nisl orci. Nullam ex magna, tristique ut ligula a,
-            eleifend sodales tellus. Nunc sed molestie nisl. Sed porta nisl
-            orci. Nullam ex magna, tristique ut ligula a, eleifend sodales
-            tellus. Nunc sed molestie nisl.
-          </AppText>
-          <View style={styles.flatView}>
-            <FlatList
-              contentContainerStyle={{}}
-              data={DATA}
-              numColumns={2}
-              renderItem={renderItem}
-              keyExtractor={(item) => item.id}
-            />
+          <View
+            style={{
+              flex: 5,
+            }}
+          >
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                marginHorizontal: RF(20),
+                marginTop: RF(70),
+              }}
+            >
+              <AppText style={styles.titleCoin}>BTC</AppText>
+              <FastImage
+                source={ICONS.bitcoin}
+                style={styles.slideImage}
+                resizeMode={FastImage.resizeMode.contain}
+              />
+            </View>
+            <View style={{ margin: RF(10) }}>
+              <AddressInput
+                inputStyle={{ borderColor: "black" }}
+                noContacts
+                // value={address}
+                placeholder="Recieving Address"
+                // onChangeText={setAddress}
+                // onChangeAddress={onChangeAddress}
+                // toggleModal={toggleContactModal}
+              />
+              <AddressInput
+                inputStyle={{
+                  borderWidth: RF(1),
+                  backgroundColor: THEME.COLORS.blueLightShadow,
+                  borderColor: THEME.COLORS.lightBlue,
+                }}
+                // value={address}
+                placeholder="Address"
+                // onChangeText={setAddress}
+                // onChangeAddress={onChangeAddress}
+                // toggleModal={toggleContactModal}
+              />
+              <View style={{ flexDirection: "row" }}>
+                <FastImage
+                  source={ICONS.question}
+                  style={styles.questionImage}
+                  resizeMode={FastImage.resizeMode.contain}
+                />
+                <AppText style={styles.innerItemText}>
+                  Spendable: 31,3999 BTC
+                </AppText>
+              </View>
+              <AddressInput
+                inputStyle={{ borderColor: "black" }}
+                // value={address}
+                placeholder="MEMO"
+                // onChangeText={setAddress}
+                // onChangeAddress={onChangeAddress}
+                // toggleModal={toggleContactModal}
+              />
+            </View>
           </View>
-          <View style={styles.copyView}>
-            <FastImage
-              source={ICONS.copy}
-              style={styles.slideImage}
-              resizeMode={FastImage.resizeMode.contain}
-            />
-            <AppText style={styles.slideCopytitle}>Copy</AppText>
-          </View>
-          <View style={styles.bottomView}>
+
+          <View
+            style={{
+              flex: 1,
+              justifyContent: "flex-end",
+              alignItems: "center",
+              marginBottom: RF(10),
+            }}
+          >
             <PrimaryButton
               buttonStyle={styles.bottombtn}
-              title="I've Written It Down"
-              onPress={() => props.navigation?.navigate("Biometry")}
-            />
-            <PrimaryButton
-              buttonStyle={[
-                styles.bottombtn,
-                { borderWidth: RF(1), borderColor: THEME.COLORS.blacklight },
-              ]}
-              title="Get New Seed"
-              disabled={true}
+              title="Enable Biometry Now"
               onPress={() => props.navigation?.navigate("Biometry")}
             />
           </View>

@@ -14,6 +14,7 @@ import Receive from "./src/screens/Receive";
 import Wallet from "./src/screens/Wallet";
 import BottomView from "./src/screens/BottomView";
 import CoinDetails from "./src/screens/CoinDetails";
+import Send from "./src/screens/Send";
 const Stack = createNativeStackNavigator();
 
 export default function App() {

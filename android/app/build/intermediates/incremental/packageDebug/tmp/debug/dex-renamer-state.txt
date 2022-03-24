@@ -1,4 +1,4 @@
-#Wed Mar 23 23:06:58 PKT 2022
+#Thu Mar 24 19:25:56 PKT 2022
 path.3=13/classes.dex
 path.2=0/classes.dex
 path.1=0/classes.dex
@@ -7,10 +7,10 @@ path.0=classes.dex
 renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
-base.4=F\:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+base.4=/Users/kryptomind/BitCoin/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
 renamed.0=classes.dex
-base.3=F\:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.2=F\:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.1=F\:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
-base.0=F\:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.3=/Users/kryptomind/BitCoin/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/13/classes.dex
+base.2=/Users/kryptomind/BitCoin/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.1=/Users/kryptomind/BitCoin/android/app/build/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
+base.0=/Users/kryptomind/BitCoin/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 path.4=14/classes.dex

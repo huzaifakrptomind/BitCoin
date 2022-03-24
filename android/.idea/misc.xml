@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/background_splash.xml" value="0.34791666666666665" />
+        <entry key="app/src/main/res/drawable/rn_edit_text_material.xml" value="0.34791666666666665" />
         <entry key="app/src/main/res/layout/launch_screen.xml" value="0.296195652173913" />
       </map>
     </option>

@@ -5,9 +5,11 @@ import { RF } from "../../shared/utils/theme/responsive";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: THEME.COLORS.lightGray,
+    backgroundColor: THEME.COLORS.white,
+    // margin: RF(20),
   },
-  slideImage: { width: RF(25), height: RF(25) },
+  slideImage: { width: RF(37), height: RF(37) },
+  questionImage: { width: RF(20), height: RF(20), alignSelf: "center" },
   slideSubTitle: {
     flex: 1.5,
     textAlign: "center",
@@ -20,7 +22,6 @@ const styles = StyleSheet.create({
   },
   flatView: {
     flex: 2.5,
-    //  backgroundColor: "blue".
   },
   slideCopytitle: {
     textAlign: "center",
@@ -44,13 +45,15 @@ const styles = StyleSheet.create({
     marginHorizontal: RF(10),
     marginTop: RF(10),
   },
-  titleItem: {
-    fontSize: THEME.FONTS.SIZE.XXSMALL,
-    color: THEME.COLORS.white,
+  titleCoin: {
+    fontSize: THEME.FONTS.SIZE.XLARGE,
+    color: THEME.COLORS.black,
+    fontWeight: "500",
   },
   innerItemText: {
     fontSize: THEME.FONTS.SIZE.XSMALL,
     color: THEME.COLORS.disabledTextLight,
+    margin: RF(5),
   },
   outerView: {
     width: RF(150),
@@ -73,6 +76,7 @@ const styles = StyleSheet.create({
   bottombtn: {
     width: RF(290),
     borderRadius: RF(7),
+    backgroundColor: THEME.COLORS.secondaryDarkBackground,
   },
 });
 
