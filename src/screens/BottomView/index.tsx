@@ -24,10 +24,12 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 // // Ionicons
 import styles from "./style";
-import DAppsStack from "../BottomTab/DAppsStack";
+import DAppsStack from "../BottomTab/DappsStack";
 import NewsStack from "../BottomTab/NewsStack";
 import WalletMain from "../WalletMain";
 import AppIcon, { Icons } from "../../shared/components/AppIcons/AppIcon";
+import DappsStack from "../BottomTab/DappsStack";
+import Wallet from "../Wallet";
 interface Props extends GenericNavigation {}
 
 function HomeScreen() {
@@ -45,9 +47,9 @@ function SettingsScreen() {
     </View>
   );
 }
-const BottomTab = ({ type, color, size = 24, isFocused, index,name }) => {
-  const icon = index == 0 ? "home" : "heart"  ;
-  
+const BottomTab = ({ type, color, size = 24, isFocused, index, name }) => {
+  const icon = index == 0 ? "home" : "heart";
+
   const gradient = index == 1;
   return (
     <View>
@@ -59,14 +61,20 @@ const BottomTab = ({ type, color, size = 24, isFocused, index,name }) => {
             size={size}
             color={"white"}
           />
-          <Text style={{color:THEME.COLORS.white}}>Wallet</Text>
+          <Text style={{ color: THEME.COLORS.white }}>Wallet</Text>
         </View>
       ) : (
         <View style={{}}>
           <AppIcon name={icon} type={type} size={size} color={color} />
-          <Text style={{color : isFocused
-          ? THEME.COLORS.skyBlue
-          : THEME.COLORS.disabledTextLight}}>{name}</Text>
+          <Text
+            style={{
+              color: isFocused
+                ? THEME.COLORS.skyBlue
+                : THEME.COLORS.disabledTextLight,
+            }}
+          >
+            {name}
+          </Text>
         </View>
       )}
     </View>
@@ -103,7 +111,7 @@ const MyTabBar = ({ state, descriptors, navigation }) => {
           >
             <BottomTab
               type={
-                index !== 1 ? Icons.FontAwesome5  : Icons.MaterialCommunityIcons
+                index !== 1 ? Icons.FontAwesome5 : Icons.MaterialCommunityIcons
               }
               index={index}
               isFocused={isFocused}
@@ -133,13 +141,14 @@ const CustomButton = ({ children, onPress }) => (
         height: 70,
         borderRadius: 35,
         backgroundColor: THEME.COLORS.skyBlue,
-        justifyContent:'center',
-        alignItems:'center'
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
       <MaterialCommunityIcons name="wallet-outline" size={30} color={"white"} />
-      <Text style={{color:THEME.COLORS.white,fontWeight:'bold'}}>Wallet</Text>
-
+      <Text style={{ color: THEME.COLORS.white, fontWeight: "bold" }}>
+        Wallet
+      </Text>
     </View>
   </TouchableOpacity>
 );
@@ -158,35 +167,40 @@ const BottomView = (props: Props) => {
               iconName = focused
                 ? "ios-information-circle"
                 : "ios-information-circle-outline";
-            }  if (route.name === "Settings") {
+            }
+            if (route.name === "Settings") {
               iconName = focused ? "ios-list-box" : "ios-list";
             }
-            if (route.name === "Dapps") { 
-              return    <AntDesign name="appstore-o"size={25} color={color} />;
+            if (route.name === "Dapps") {
+              return <AntDesign name="appstore-o" size={25} color={color} />;
             }
-            if (route.name === "News") { 
-              return    <AntDesign name="earth"size={25} color={color} />;
+            if (route.name === "News") {
+              return <AntDesign name="earth" size={25} color={color} />;
             }
-            if (route.name === "Setting") { 
-              return    <AntDesign name="setting"size={25} color={color} />;
+            if (route.name === "Setting") {
+              return <AntDesign name="setting" size={25} color={color} />;
             }
-            if(route.name === "Dex"){
-              return    <AntDesign name="retweet"size={25} color={color} />;
+            if (route.name === "Dex") {
+              return <AntDesign name="retweet" size={25} color={color} />;
             }
             // appstore-o retweet
 
             // return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarLabelStyle:{fontSize:RF(12)},
+          tabBarLabelStyle: { fontSize: RF(12) },
           tabBarActiveTintColor: THEME.COLORS.skyBlue,
           tabBarInactiveTintColor: THEME.COLORS.disabledTextLight,
         })}
       >
-            <Tab.Screen name="Dapps" component={DAppsStack}   />
-            <Tab.Screen name="News" component={NewsStack} />
-           <Tab.Screen name="WalletMain" component={WalletMain} options={{
+        <Tab.Screen name="Dapps" component={Wallet} />
+        <Tab.Screen name="News" component={NewsStack} />
+        <Tab.Screen
+          name="WalletMain"
+          component={WalletMain}
+          options={{
             tabBarButton: (props) => <CustomButton {...props} />,
-          }} />
+          }}
+        />
         <Tab.Screen name="Dex" component={HomeScreen} />
         <Tab.Screen name="Setting" component={SettingsScreen} />
         {/* <Tab.Screen name="WalletMain" component={WalletMain} /> */}

@@ -13,6 +13,7 @@ import Coin from "./src/screens/Coin";
 import Receive from "./src/screens/Receive";
 import Wallet from "./src/screens/Wallet";
 import BottomView from "./src/screens/BottomView";
+import CoinDetails from "./src/screens/CoinDetails";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -36,6 +37,7 @@ export default function App() {
         <Stack.Screen name="Coin" component={Coin} />
         <Stack.Screen name="Receive" component={Receive} />
         <Stack.Screen name="BottomView" component={BottomView} />
+        <Stack.Screen name="CoinDetails" component={CoinDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );
