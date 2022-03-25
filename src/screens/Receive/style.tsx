@@ -6,7 +6,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: THEME.COLORS.white,
-    // margin: RF(20),
+  },
+  upperContainer: {
+    flex: 5,
+  },
+  upperTitleContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginHorizontal: RF(20),
+    marginTop: RF(70),
+  },
+  bottomContainer: {
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "center",
+    marginBottom: RF(10),
   },
   slideImage: { width: RF(37), height: RF(37) },
   questionImage: { width: RF(20), height: RF(20), alignSelf: "center" },

@@ -9,6 +9,9 @@ export const THEME = {
     blacklight: "#707070",
     buttonGray: "#E3E3E3",
     lightGray: "#F7F7F7",
+    secondaryGray: "#F5F5F5",
+    primaryGray: "#E6E6E6",
+
     changeGreen: "#00C053",
     changeRed: "#ff3939",
     yellow: "#E4B40E",

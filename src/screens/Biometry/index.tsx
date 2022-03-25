@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Platform,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { SafeAreaView, StatusBar, View } from "react-native";
 import FastImage from "react-native-fast-image";
 import SplashScreen from "react-native-splash-screen";
 import { ICONS } from "../../asset";
@@ -17,9 +10,7 @@ import { GenericNavigation } from "../../shared/utils/models/types";
 import { THEME } from "../../shared/utils/theme";
 import { RF } from "../../shared/utils/theme/responsive";
 import styles from "./style";
-// interface Props {
-//   item: IntroSlide;
-// }
+
 interface Props extends GenericNavigation {}
 
 const Biometry = (props: Props) => {
@@ -31,10 +22,7 @@ const Biometry = (props: Props) => {
       <StatusBar backgroundColor={THEME.COLORS.lightGray} />
       <SafeAreaView style={[{ flex: 1 }]}>
         <AppHeader title="Biometry" absolute />
-        <View
-          // key={props.item.key}
-          style={[styles.container]}
-        >
+        <View style={[styles.container]}>
           <View style={styles.topView}>
             <FastImage
               source={ICONS.scanner}

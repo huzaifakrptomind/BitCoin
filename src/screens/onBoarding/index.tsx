@@ -1,20 +1,8 @@
 import React, { useEffect, useState } from "react";
-import {
-  Platform,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { SafeAreaView, StatusBar, Text, TouchableOpacity } from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
-import SplashScreen from "react-native-splash-screen";
 import IntroSlider from "../../shared/components/IntroSlider";
-import {
-  INTRO_SLIDES,
-  IOS_INTRO_SLIDES,
-} from "../../shared/utils/AppConstants";
+import { INTRO_SLIDES } from "../../shared/utils/AppConstants";
 import { IntroSlide } from "../../shared/utils/models/types";
 import { THEME } from "../../shared/utils/theme";
 import { GenericNavigation } from "../../shared/utils/models/types";
@@ -22,12 +10,6 @@ import styles from "./styles";
 interface Props extends GenericNavigation {}
 
 const onBoarding = (props: Props) => {
-  console.log("---props---", props);
-
-  const [onDone, setonDone] = useState(false);
-  useEffect(() => {
-    SplashScreen.hide();
-  }, []);
   return (
     <>
       <StatusBar barStyle={"light-content"} />
@@ -41,9 +23,6 @@ const onBoarding = (props: Props) => {
             <IntroSlider item={item} />
           )}
           data={INTRO_SLIDES}
-          //  onSkip={}
-          //  onDone={onDone}
-          // dotStyle={{ backgroundColor: THEME.COLORS.dotColor }}
           activeDotStyle={{ backgroundColor: THEME.COLORS.dotColor }}
           renderDoneButton={() => (
             <TouchableOpacity
@@ -62,18 +41,3 @@ const onBoarding = (props: Props) => {
 };
 
 export default onBoarding;
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: "center",
-//     alignItems: "center",
-//   },
-//   sliderDoneButton: {
-//     color: THEME.COLORS.textLight,
-//     // fontFamily: THEME.FONTS.TYPE.REGULAR,
-//     fontSize: THEME.FONTS.SIZE.SMALL,
-//     marginVertical: THEME.MARGIN.NORMAL,
-//     alignSelf: "center",
-//   },
-// });

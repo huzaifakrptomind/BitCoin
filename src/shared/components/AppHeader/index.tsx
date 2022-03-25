@@ -41,9 +41,9 @@ interface Props {
   headerStyle?: StyleProp<ViewStyle>;
   showSearchBar?: boolean;
   onPressLogo?: () => void;
-  statusbarColor:string;
+  statusbarColor: string;
   showShadow?: boolean;
-  headerBackgroundColor:string
+  headerBackgroundColor: string;
 }
 
 const AppHeader = (props: Props) => {
@@ -56,7 +56,7 @@ const AppHeader = (props: Props) => {
     absolute,
     showShadow,
     statusbarColor,
-    headerBackgroundColor
+    headerBackgroundColor,
   } = props;
 
   const insets = useSafeAreaInsets();
@@ -206,7 +206,7 @@ const AppHeader = (props: Props) => {
           {props.showLogo && (
             <TouchableOpacity onPress={props.onPressLogo}>
               <FastImage
-                source={ICONS.backArrow}
+                source={ICONS.scannerBar}
                 style={styles.logo}
                 resizeMode="contain"
               />

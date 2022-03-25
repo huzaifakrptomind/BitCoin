@@ -1,13 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  FlatList,
-  Platform,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { SafeAreaView, View } from "react-native";
 import FastImage from "react-native-fast-image";
 import SplashScreen from "react-native-splash-screen";
 import { ICONS } from "../../asset";
@@ -91,23 +83,11 @@ const Receive = (props: Props) => {
 
   return (
     <>
-      {/* <StatusBar backgroundColor={THEME.COLORS.lightGray} /> */}
       <SafeAreaView style={[{ flex: 1 }]}>
         <AppHeader showBack showLogo title="Receive" absolute />
         <View style={[styles.container]}>
-          <View
-            style={{
-              flex: 5,
-            }}
-          >
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-                marginHorizontal: RF(20),
-                marginTop: RF(70),
-              }}
-            >
+          <View style={styles.upperContainer}>
+            <View style={styles.upperTitleContainer}>
               <AppText style={styles.titleCoin}>BTC</AppText>
               <FastImage
                 source={ICONS.bitcoin}
@@ -119,12 +99,7 @@ const Receive = (props: Props) => {
               <AddressInput
                 inputStyle={{ borderColor: "black" }}
                 noContacts
-                // value={address}
                 placeholder="Recieving Address"
-
-                // onChangeText={setAddress}
-                // onChangeAddress={onChangeAddress}
-                // toggleModal={toggleContactModal}
               />
               <AddressInput
                 inputStyle={{
@@ -158,14 +133,7 @@ const Receive = (props: Props) => {
               />
             </View>
           </View>
-          <View
-            style={{
-              flex: 1,
-              justifyContent: "flex-end",
-              alignItems: "center",
-              marginBottom: RF(10),
-            }}
-          >
+          <View style={styles.bottomContainer}>
             <PrimaryButton
               buttonStyle={styles.bottombtn}
               title="Enable Biometry Now"
@@ -177,7 +145,6 @@ const Receive = (props: Props) => {
             title="Security Check"
             subTitle="Enter New Pin"
             onConfirm={() => {
-              console.log("---confirm---");
               setModalVisible(false);
               props.navigation?.navigate("Seed");
             }}

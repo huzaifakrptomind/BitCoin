@@ -6,7 +6,44 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: THEME.COLORS.white,
-    // margin: RF(20),
+  },
+  flatContiner: {
+    flex: 2,
+    marginTop: RF(60),
+  },
+  flatUpperContainer: {
+    flex: 4,
+    alignItems: "center",
+  },
+  flatMiddleContainer: {
+    width: RF(290),
+    height: RF(140),
+    borderRadius: THEME.RADIUS.BOX,
+    marginTop: RF(20),
+    elevation: RF(10),
+    shadowColor: "#000",
+    backgroundColor: "white",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+  },
+  flatBottomContainer: {
+    flexDirection: "row",
+    marginVertical: RF(10),
+    justifyContent: "space-between",
+  },
+  midView: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    margin: RF(15),
+  },
+  bottomView: {
+    flexDirection: "row",
+    marginHorizontal: RF(15),
+    marginVertical: RF(10),
   },
   slideImage: { width: RF(40), height: RF(40) },
   coinImage: { width: RF(80), height: RF(80) },
@@ -49,15 +86,40 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
   },
-  bottomView: {
-    flex: 1.5,
-    // backgroundColor: "green",
-    justifyContent: "center",
+
+  itemContainer: {
+    flexDirection: "row",
+    flex: 1,
+    height: RF(55),
+    alignItems: "center",
+    marginVertical: RF(2),
   },
-  item: {
+  itemLeftView: {
+    flex: 0.5,
     justifyContent: "center",
-    marginHorizontal: RF(10),
-    marginTop: RF(10),
+    alignItems: "center",
+  },
+  itemRightView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  itemMideView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "flex-start",
+  },
+  itemRightInnerView: {
+    width: RF(90),
+    height: RF(30),
+    borderWidth: RF(1),
+    borderRadius: THEME.RADIUS.OVAL,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  itemMidInerView: {
+    flexDirection: "row",
+    margin: RF(3),
   },
   titleItem: {
     fontSize: THEME.FONTS.SIZE.XXSMALL,

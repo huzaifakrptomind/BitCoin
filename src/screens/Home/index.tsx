@@ -8,37 +8,23 @@ import {
   View,
 } from "react-native";
 import FastImage from "react-native-fast-image";
-import SplashScreen from "react-native-splash-screen";
 import { ICONS } from "../../asset";
 import AppText from "../../shared/components/AppText";
 import PinModal from "../../shared/components/PinModal";
 import PrimaryButton from "../../shared/components/PrimaryButton";
 import { GenericNavigation } from "../../shared/utils/models/types";
 import { THEME } from "../../shared/utils/theme";
-import { RF } from "../../shared/utils/theme/responsive";
 import styles from "./style";
-// interface Props {
-//   item: IntroSlide;
-// }
 interface Props extends GenericNavigation {}
-
 const Home = (props: Props) => {
   const [modalVisible, setModalVisible] = useState(false);
 
-  useEffect(() => {
-    SplashScreen.hide();
-  }, []);
   return (
     <>
       <StatusBar backgroundColor={THEME.COLORS.secondaryDarkBackground} />
       <SafeAreaView style={[{ flex: 1 }]}>
-        <View
-          // key={props.item.key}
-          style={[styles.container]}
-        >
-          <View
-            style={{ flex: 5, justifyContent: "center", alignItems: "center" }}
-          >
+        <View style={[styles.container]}>
+          <View style={[styles.upperContainer, { flex: 5 }]}>
             <FastImage
               source={ICONS.logo}
               style={styles.slideImage}
@@ -49,7 +35,7 @@ const Home = (props: Props) => {
               and comfortably
             </AppText>
           </View>
-          <View style={{ flex: 1 }}>
+          <View style={styles.midContainer}>
             <View style={styles.actionContainer}>
               <PrimaryButton
                 disabled={false}
@@ -89,18 +75,3 @@ const Home = (props: Props) => {
 };
 
 export default Home;
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: "center",
-//     alignItems: "center",
-//   },
-//   sliderDoneButton: {
-//     color: THEME.COLORS.yellow,
-//     // fontFamily: THEME.FONTS.TYPE.REGULAR,
-//     fontSize: THEME.FONTS.SIZE.SMALL,
-//     marginVertical: THEME.MARGIN.NORMAL,
-//     alignSelf: "center",
-//   },
-// });

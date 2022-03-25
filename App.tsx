@@ -2,7 +2,6 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Boarding from "./src/screens/onBoarding";
-import Intro from "./src/screens/Home";
 import Home from "./src/screens/Home";
 import Security from "./src/screens/Security";
 import SplashScreen from "react-native-splash-screen";
@@ -14,9 +13,8 @@ import Receive from "./src/screens/Receive";
 import Wallet from "./src/screens/Wallet";
 import BottomView from "./src/screens/BottomView";
 import CoinDetails from "./src/screens/CoinDetails";
-import Send from "./src/screens/Send";
-const Stack = createNativeStackNavigator();
 
+const Stack = createNativeStackNavigator();
 export default function App() {
   React.useEffect(() => {
     SplashScreen.hide();

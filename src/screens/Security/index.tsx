@@ -1,17 +1,8 @@
 import React, { useEffect, useState } from "react";
-import {
-  Platform,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { SafeAreaView, StatusBar, View } from "react-native";
 import { THEME } from "../../shared/utils/theme";
 import { GenericNavigation } from "../../shared/utils/models/types";
 import styles from "./styles";
-import AppText from "../../shared/components/AppText";
-import { RF } from "../../shared/utils/theme/responsive";
 import PinModal from "../../shared/components/PinModal";
 interface Props extends GenericNavigation {}
 
@@ -28,7 +19,6 @@ const Security = (props: Props) => {
             title="Security Check"
             subTitle="Enter New Pin"
             onConfirm={() => {
-              console.log("---confirm---");
               setModalVisible(false);
               props.navigation?.navigate("Seed");
             }}

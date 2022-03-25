@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     fontSize: THEME.FONTS.SIZE.SMALL,
     color: THEME.COLORS.disabledTextLight,
     margin: RF(20),
-    lineHeight: THEME.FONTS.SIZE.LARGE,
+    maxWidth: RF(240),
   },
   slideImage: {
     width: RF(180),

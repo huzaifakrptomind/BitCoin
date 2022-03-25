@@ -1,23 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {
-  FlatList,
-  Platform,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { FlatList, SafeAreaView, TouchableOpacity, View } from "react-native";
 import FastImage from "react-native-fast-image";
-import SplashScreen from "react-native-splash-screen";
 import { ICONS } from "../../asset";
 import AppHeader from "../../shared/components/AppHeader";
 import AppText from "../../shared/components/AppText";
-import PrimaryButton from "../../shared/components/PrimaryButton";
 import { GenericNavigation } from "../../shared/utils/models/types";
 import { THEME } from "../../shared/utils/theme";
-import { RF } from "../../shared/utils/theme/responsive";
 
 import styles from "./style";
 interface Props extends GenericNavigation {}
@@ -126,7 +114,9 @@ const WalletMain = (props: Props) => {
           statusbarColor={THEME.COLORS.secondaryDarkBackground}
           headerBackgroundColor={THEME.COLORS.secondaryDarkBackground}
           showBack
-          showLeft
+          // showLeft
+
+          showLogo
           absolute
         />
         <View style={[styles.container]}>

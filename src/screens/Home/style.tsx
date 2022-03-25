@@ -19,16 +19,25 @@ const styles = StyleSheet.create({
     fontSize: THEME.FONTS.SIZE.XXSMALL,
     color: THEME.COLORS.white,
     margin: RF(30),
+    // maxHeight: RF(40),
+    maxWidth: RF(200),
   },
   actionContainer: {
-    position: "absolute",
-    bottom: RF(75),
+    // position: "absolute",
+    // bottom: RF(75),
     alignSelf: "center",
     flexDirection: "row",
   },
   tagTitle: {
     fontSize: THEME.FONTS.SIZE.XXSMALL,
     color: THEME.COLORS.white,
+  },
+  upperContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  midContainer: {
+    flex: 1,
   },
   bottomContainer: {
     flexDirection: "row",

@@ -1,15 +1,6 @@
 import React, { useEffect, useState } from "react";
-import {
-  FlatList,
-  Platform,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { FlatList, SafeAreaView, StatusBar, View } from "react-native";
 import FastImage from "react-native-fast-image";
-import SplashScreen from "react-native-splash-screen";
 import { ICONS } from "../../asset";
 import AppHeader from "../../shared/components/AppHeader";
 import AppText from "../../shared/components/AppText";
@@ -80,9 +71,6 @@ const Item = ({ title, id }) => (
 );
 
 const Coin = (props: Props) => {
-  useEffect(() => {
-    SplashScreen.hide();
-  }, []);
   const renderItem = ({ item }) => <Item title={item.title} id={item.id} />;
 
   return (
