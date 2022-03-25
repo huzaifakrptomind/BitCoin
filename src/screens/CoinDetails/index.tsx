@@ -6,6 +6,7 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from "react-native";
 import FastImage from "react-native-fast-image";
@@ -19,9 +20,136 @@ import { GenericNavigation } from "../../shared/utils/models/types";
 import { THEME } from "../../shared/utils/theme";
 import { RF } from "../../shared/utils/theme/responsive";
 import styles from "./style";
+
+import faker from "faker";
 interface Props extends GenericNavigation {}
 
+const historyData = [...Array(10).keys()].map((_, i) => {
+  return {
+    coinName: faker.name.jobTitle(),
+    price: faker.finance.amount(),
+    date: faker.date.soon(),
+    id: faker.datatype.uuid(),
+    createdAt: faker.date.recent(),
+    description: faker.lorem.sentences(),
+    coinImage: faker.image.avatar(),
+  };
+});
+const DATA = [
+  {
+    id: "1",
+    title: "Reality",
+    image: ICONS.pending,
+    color: THEME.COLORS.bitcoinColor,
+    amount: 0.024,
+    symbol: "BTC",
+    date: "Oct 19, 2019, 5:42:44 AM",
+    status: "Pending",
+  },
+  {
+    id: "2",
+    title: "Reality",
+    image: ICONS.pending,
+    color: THEME.COLORS.bitcoinColor,
+    amount: 0.024,
+    symbol: "BTC",
+    date: "Oct 19, 2019, 5:42:44 AM",
+    status: "Pending",
+  },
+  {
+    id: "3",
+    title: "Reality",
+    image: ICONS.pending,
+    color: THEME.COLORS.bitcoinColor,
+    amount: 0.024,
+    symbol: "BTC",
+    date: "Oct 19, 2019, 5:42:44 AM",
+    status: "Pending",
+  },
+  // {
+  //   id: "4",
+  //   title: "Reality",
+  //   image: ICONS.doge,
+  //   color: THEME.COLORS.dogeCOlor,
+  // },
+];
+const Item = ({ title, image, amount, symbol, date, status }) => (
+  <TouchableOpacity
+    style={{}}
+    // onPress={() => props.navigation.navigate("CoinDetails")}
+  >
+    <View
+      style={{
+        flexDirection: "row",
+        flex: 1,
+        height: RF(55),
+        // justifyContent: "center",
+        backgroundColor: "#E6E6E6",
+        // width: RF(200),
+        alignItems: "center",
+        marginVertical: RF(2),
+      }}
+    >
+      <View
+        style={{
+          // backgroundColor: "gray",
+          flex: 0.5,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <FastImage
+          source={image}
+          style={styles.slideImage}
+          resizeMode={FastImage.resizeMode.contain}
+        />
+      </View>
+      <View
+        style={{
+          // backgroundColor: "green",
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "flex-start",
+        }}
+      >
+        <View style={{ flexDirection: "row", margin: RF(3) }}>
+          <AppText style={styles.amountTitle}>{amount}</AppText>
+          <AppText
+            style={[styles.amountTitle, { marginLeft: THEME.MARGIN.MID_LOW }]}
+          >
+            {symbol}
+          </AppText>
+        </View>
+        <AppText style={styles.dateTitle}>{date}</AppText>
+      </View>
+      <View
+        style={{
+          // backgroundColor: "gray",
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <View
+          style={{
+            width: RF(90),
+            height: RF(30),
+            borderWidth: RF(1),
+            borderRadius: THEME.RADIUS.OVAL,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <AppText style={[styles.statusTitle]}>{status}</AppText>
+        </View>
+      </View>
+    </View>
+  </TouchableOpacity>
+);
+
 const CoinDetails = (props: Props) => {
+  console.log(historyData);
+
   return (
     <>
       <StatusBar backgroundColor={THEME.COLORS.lightGray} />
@@ -31,26 +159,22 @@ const CoinDetails = (props: Props) => {
           <View
             style={{
               flex: 4,
-              margin: 10,
               alignItems: "center",
+              marginTop: RF(60),
             }}
           >
-            <View
-              style={{
-                marginTop: RF(35),
-              }}
-            >
+            <View>
               <FastImage
                 source={ICONS.bitcoin}
-                style={styles.slideImage}
+                style={styles.coinImage}
                 resizeMode={FastImage.resizeMode.contain}
               />
-              <AppText style={styles.slideSubTitle}> Bitcoin</AppText>
             </View>
+            <AppText style={styles.slideSubTitle}> Bitcoin</AppText>
             <View
               style={{
                 width: RF(290),
-                height: RF(130),
+                height: RF(140),
                 borderRadius: THEME.RADIUS.BOX,
                 marginTop: RF(20),
                 elevation: RF(10),
@@ -87,10 +211,18 @@ const CoinDetails = (props: Props) => {
                     resizeMode={FastImage.resizeMode.contain}
                   />
                 </View>
-                <AppText style={styles.amountTitle}>$ 31,000 BTC</AppText>
+                <AppText
+                  style={{
+                    fontSize: THEME.FONTS.SIZE.XLARGE,
+                    color: THEME.COLORS.secondaryDarkBackground,
+                    fontWeight: "600",
+                  }}
+                >
+                  $ 31,000 BTC
+                </AppText>
                 <View style={{ margin: RF(10) }}>
-                  <AppText style={styles.rateTitle}>$ 112,000 USD</AppText>
-                  <AppText style={styles.rateTitle}>$ 574,130 RMB</AppText>
+                  <AppText style={styles.rateTitle}>112,000 USD</AppText>
+                  <AppText style={styles.rateTitle}>574,130 RMB</AppText>
                 </View>
               </View>
             </View>
@@ -143,7 +275,7 @@ const CoinDetails = (props: Props) => {
               onPress={() => props.navigation?.navigate("Biometry")}
             />
           </View>
-          <View style={{ flex: 2, backgroundColor: "orange" }}>
+          <View style={{ flex: 2 }}>
             <View
               style={{
                 flexDirection: "row",
@@ -154,6 +286,40 @@ const CoinDetails = (props: Props) => {
               <AppText style={styles.slideCopytitle}>Transaction</AppText>
               <Text>24 March, 2021</Text>
             </View>
+            <View
+              style={{
+                flexDirection: "row",
+                marginHorizontal: RF(15),
+                marginVertical: RF(10),
+              }}
+            >
+              <Text style={{ marginRight: RF(10) }}>All</Text>
+              <Text style={{ marginRight: RF(10) }}>Received</Text>
+              <Text style={{ marginRight: RF(10) }}>Sent</Text>
+            </View>
+            <FlatList
+              contentContainerStyle={{}}
+              showsVerticalScrollIndicator={false}
+              data={DATA}
+              numColumns={1}
+              renderItem={({ item }) => {
+                return (
+                  <Item
+                    title={item.title}
+                    // id={item.id}
+                    image={item.image}
+                    amount={item.amount}
+                    symbol={item.symbol}
+                    date={item.date}
+                    status={item.status}
+                    // color={item.color}
+                    // // rate={item.rateColor}
+                    // props={props}
+                  />
+                );
+              }}
+              keyExtractor={(item) => item.id}
+            />
           </View>
         </View>
       </SafeAreaView>

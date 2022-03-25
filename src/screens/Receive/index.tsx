@@ -14,6 +14,7 @@ import { ICONS } from "../../asset";
 import AddressInput from "../../shared/components/AddressInput";
 import AppHeader from "../../shared/components/AppHeader";
 import AppText from "../../shared/components/AppText";
+import PinModal from "../../shared/components/PinModal";
 import PrimaryButton from "../../shared/components/PrimaryButton";
 import { GenericNavigation } from "../../shared/utils/models/types";
 import { THEME } from "../../shared/utils/theme";
@@ -81,6 +82,8 @@ const Item = ({ title, id }) => (
 );
 
 const Receive = (props: Props) => {
+  const [modalVisible, setModalVisible] = useState(false);
+
   useEffect(() => {
     SplashScreen.hide();
   }, []);
@@ -118,6 +121,7 @@ const Receive = (props: Props) => {
                 noContacts
                 // value={address}
                 placeholder="Recieving Address"
+
                 // onChangeText={setAddress}
                 // onChangeAddress={onChangeAddress}
                 // toggleModal={toggleContactModal}
@@ -154,7 +158,6 @@ const Receive = (props: Props) => {
               />
             </View>
           </View>
-
           <View
             style={{
               flex: 1,
@@ -169,6 +172,16 @@ const Receive = (props: Props) => {
               onPress={() => props.navigation?.navigate("Biometry")}
             />
           </View>
+          <PinModal
+            visible={modalVisible}
+            title="Security Check"
+            subTitle="Enter New Pin"
+            onConfirm={() => {
+              console.log("---confirm---");
+              setModalVisible(false);
+              props.navigation?.navigate("Seed");
+            }}
+          />
         </View>
       </SafeAreaView>
     </>

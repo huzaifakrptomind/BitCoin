@@ -8,20 +8,28 @@ const styles = StyleSheet.create({
     backgroundColor: THEME.COLORS.white,
     // margin: RF(20),
   },
-  slideImage: { width: RF(90), height: RF(90), margin: THEME.MARGIN.MID_LOW },
+  slideImage: { width: RF(40), height: RF(40) },
+  coinImage: { width: RF(80), height: RF(80) },
   slideSubTitle: {
     fontSize: THEME.FONTS.SIZE.XLARGE,
     color: THEME.COLORS.black,
     textAlign: "center",
+    marginTop: RF(20),
   },
   amountTitle: {
-    fontSize: THEME.FONTS.SIZE.LARGE,
-    color: THEME.COLORS.secondaryDarkBackground,
-    // marginLeft: RF(5),
+    fontSize: THEME.FONTS.SIZE.XSMALL,
+  },
+  dateTitle: {
+    fontSize: THEME.FONTS.SIZE.XXXSMALL,
+    color: THEME.COLORS.disabledTextLight,
+  },
+  statusTitle: {
+    fontSize: THEME.FONTS.SIZE.XSMALL,
+    fontWeight: "500",
   },
   rateTitle: {
     fontSize: THEME.FONTS.SIZE.XXSMALL,
-    color: THEME.COLORS.black,
+    color: THEME.COLORS.disabledTextLight,
     margin: RF(3),
   },
   flatView: {

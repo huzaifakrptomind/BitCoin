@@ -78,17 +78,6 @@ const Item = ({ title, id, image, color, rate, props }) => (
 );
 
 const WalletMain = (props: Props) => {
-  const renderItem = ({ item }) => (
-    <Item
-      title={item.title}
-      id={item.id}
-      image={item.image}
-      color={item.color}
-      rate={item.rateColor}
-      props={props}
-    />
-  );
-
   return (
     <>
       <SafeAreaView style={[{ flex: 1 }]}>
@@ -141,7 +130,18 @@ const WalletMain = (props: Props) => {
               contentContainerStyle={{}}
               data={DATA}
               numColumns={2}
-              renderItem={renderItem}
+              renderItem={({ item }) => {
+                return (
+                  <Item
+                    title={item.title}
+                    id={item.id}
+                    image={item.image}
+                    color={item.color}
+                    rate={item.rateColor}
+                    props={props}
+                  />
+                );
+              }}
               keyExtractor={(item) => item.id}
             />
           </View>

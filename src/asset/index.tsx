@@ -18,6 +18,7 @@ const ICONS = {
   dash: require("../asset/coins/dash.png"),
   doge: require("../asset/coins/doge.png"),
   question: require("../asset/icons/question.png"),
+  pending: require("../asset/coins/pending.png"),
 
   BACKSPACE: require("./icons/backspace.png"),
   TX_SENT: require("./icons/sentLight.png"),
