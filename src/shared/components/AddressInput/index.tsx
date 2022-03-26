@@ -54,7 +54,7 @@ const AddressInput = (props: Props) => {
         >
           <Feather
             name="clipboard"
-            style={{ alignSelf: "center", marginRight: THEME.MARGIN.LOW }}
+            style={{ alignSelf: "center", }}
             size={24}
             color={THEME.COLORS.yellow}
           />
@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
     height: HP(6),
     color: THEME.COLORS.black,
     paddingHorizontal: THEME.PADDING.LOW,
+    fontSize:RF(15)
     // fontFamily: THEME.FONTS.TYPE.REGULAR,
   },
   scan: { width: RF(20), height: "100%" },

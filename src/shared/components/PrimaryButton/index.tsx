@@ -16,7 +16,8 @@ import { RF } from "../../utils/theme/responsive";
 // import { THEME, secondaryBackgroundColorProperty } from "../../theme";
 // import GLOBAL_STYLE from "../../theme/global";
 // import { HP, RF } from "../../theme/responsive";
-import Icon from "react-native-vector-icons/Entypo";
+import Icon from "react-native-vector-icons/Feather";
+import { IconProps } from "react-native-vector-icons/Icon";
 
 interface Props extends TouchableOpacityProps {
   title: string;
@@ -24,25 +25,27 @@ interface Props extends TouchableOpacityProps {
   textStyle?: StyleProp<TextStyle>;
   icon?: string;
   loading?: boolean;
-  small?: boolean;
+  large?: boolean;
   disabled?: boolean;
-  disabledMessage?: string;
+  disabledMessage?: boolean;
+  titleColorProp?:string
+  // iconStyle?:StyleProp<IconProps>
 }
 
 const PrimaryButton = (props: Props) => {
   let titleColorProp = {
-    color: props.disabled ? THEME.COLORS.textLight : THEME.COLORS.white,
+    color: props.disabledMessage ? THEME.COLORS.blacklight : THEME.COLORS.white,
   };
 
   let shadowColorProp = {
-    shadowColor: props.disabled ? THEME.COLORS.black : THEME.COLORS.yellow,
+    shadowColor: props.disabledMessage ? THEME.COLORS.black : THEME.COLORS.yellow,
   };
 
   let buttonBackgroundColor = () => {
-    if (props.disabled) {
+    if (props.disabledMessage) {
       return { backgroundColor: THEME.COLORS.white };
     } else {
-      return { backgroundColor: THEME.COLORS.lightBlue };
+      return { backgroundColor: THEME.COLORS.secondaryLightBackground };
     }
   };
   return (
@@ -51,21 +54,23 @@ const PrimaryButton = (props: Props) => {
       style={[
         shadowColorProp,
         buttonBackgroundColor(),
-        props.small ? styles.smallContainer : styles.container,
+        props.large ? styles.largeContainer : styles.container,
         props.buttonStyle,
       ]}
-      disabled={props.loading || props.disabled}
+      // disabled={props.loading || props.disabled}
       activeOpacity={0.7}
+    
     >
       <View style={{ flexDirection: "row", alignItems: "center" }}>
-        {props.icon && <Icon name={props.icon} style={styles.icon} />}
-        {props.loading ? (
+          {/* {props.loading ? (
           <ActivityIndicator color={THEME.COLORS.white} />
-        ) : (
+        ) : ( */}
           <Text style={[styles.buttonText, titleColorProp, props.textStyle]}>
             {props.title}
           </Text>
-        )}
+        {/* )} */}
+        {props.icon && <Icon name={props.icon} style={[styles.icon,]}  />}
+      
       </View>
     </TouchableOpacity>
   );
@@ -76,11 +81,10 @@ export default PrimaryButton;
 const styles = StyleSheet.create({
   container: {
     width: "42%",
-    height: RF(40),
+    height: RF(52),
     alignSelf: "center",
     borderRadius: THEME.RADIUS.BOX,
     ...GLOBAL_STYLE.CENTER,
-    // marginBottom: THEME.MARGIN.NORMAL,
     flexDirection: "row",
     margin: 10,
     shadowOffset: {
@@ -92,13 +96,16 @@ const styles = StyleSheet.create({
 
     elevation: 8,
   },
-  smallContainer: {
-    width: "60%",
-    height: RF(40),
+  largeContainer: {
+    // width: "60%",
+    width: RF(290),
+    // borderRadius: RF(7),
+    height: RF(52),
     alignSelf: "center",
     borderRadius: THEME.RADIUS.BOX,
     ...GLOBAL_STYLE.CENTER,
-    // marginBottom: THEME.MARGIN.NORMAL,
+    marginBottom: THEME.MARGIN.NORMAL,
+
     flexDirection: "row",
     shadowOffset: {
       width: 0,
@@ -110,9 +117,9 @@ const styles = StyleSheet.create({
     elevation: 8,
   },
   icon: {
-    fontSize: 20,
+    fontSize: 25,
     color: THEME.COLORS.white,
-    marginRight: THEME.MARGIN.LOW,
+    marginLeft:RF(55)
   },
   buttonText: {
     fontFamily: THEME.FONTS.TYPE.SEMIBOLD,

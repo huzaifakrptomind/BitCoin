@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     fontSize: THEME.FONTS.SIZE.XLARGE,
     color: THEME.COLORS.black,
     textAlign: "center",
-    marginTop: RF(20),
+    marginTop: RF(10),
   },
   amountTitle: {
     fontSize: THEME.FONTS.SIZE.XSMALL,
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
   },
   rightView: { paddingLeft: RF(20) },
   bottombtn: {
-    width: RF(290),
+    width: RF(140),
     borderRadius: RF(7),
   },
 });

@@ -2,23 +2,25 @@ import { RF, WP } from "./responsive";
 
 export const THEME = {
   COLORS: {
+    primaryBackground:"#FFFFFF",
+    primaryLightBackground: "#F7F7F7",
+    secondaryBackground:"#3B6BFF",
+    secondaryLightBackground: "#68ACFF",
     primaryDarkBackground: "#F6F6F6",
-    primaryLightBackground: "#E6F2FF",
-    secondaryDarkBackground: "#3B6BFF",
-    secondaryLightBackground: "#EFEFEF",
+    // secondaryDarkBackground: "#3B6BFF",
+
+    primaryGray:'#E6E6E6',
+    primaryGrayLight:"#F5F5F5",
     blacklight: "#707070",
     buttonGray: "#E3E3E3",
     lightGray: "#F7F7F7",
-    secondaryGray: "#F5F5F5",
-    primaryGray: "#E6E6E6",
-
     changeGreen: "#00C053",
     changeRed: "#ff3939",
     yellow: "#E4B40E",
     text: "#000",
     purple: "#6829E1",
     accentBlue: "#27A3E3",
-    blueLightShadow: "#EBF4FF",
+    primarytext: "#68ACFF",
     secondarytext: "",
     lightBlue: "#68ACFF",
     textLight: "#928FA3",
@@ -40,11 +42,13 @@ export const THEME = {
     biometryCircleButtonColor: "#414A5B",
     reddishBackground: "#e6d7d7",
     modalBackground: "rgba(0,0,0,0.4)",
-    bitcoinColor: "#F7931A",
-    etherumColor: "#2075C3",
-    dashColor: "#0986D3",
-    dogeCOlor: "#C3A723",
-    dashRateColor: "green",
+    bitcoinColor:"#F7931A",
+    etherumColor:"#2075C3",
+    dashColor:"#0986D3",
+    dogeCOlor:"#C3A723",
+    dashRateColor:"green"
+
+
   },
   FONTS: {
     SIZE: {

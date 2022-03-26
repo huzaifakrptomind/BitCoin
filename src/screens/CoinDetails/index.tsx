@@ -18,6 +18,7 @@ import { RF } from "../../shared/utils/theme/responsive";
 import styles from "./style";
 import faker from "faker";
 import ScannerModal from "../../shared/components/ScannerModal";
+import AddressInput from "../../shared/components/AddressInput";
 interface Props extends GenericNavigation {}
 
 const historyData = [...Array(10).keys()].map((_, i) => {
@@ -123,99 +124,93 @@ const CoinDetails = (props: Props) => {
                 return (
                   <>
                     <View style={styles.flatUpperContainer}>
-                      <View>
-                        <FastImage
-                          source={ICONS.bitcoin}
-                          style={styles.coinImage}
-                          resizeMode={FastImage.resizeMode.contain}
-                        />
-                      </View>
+                        <View>
+                          <FastImage
+                            source={ICONS.bitcoin}
+                            style={styles.coinImage}
+                            resizeMode={FastImage.resizeMode.contain}
+                          />
+                        </View>
                       <AppText style={styles.slideSubTitle}> Bitcoin</AppText>
-                      <View style={styles.flatMiddleContainer}>
-                        <View style={{ marginHorizontal: RF(10) }}>
-                          <View style={styles.flatBottomContainer}>
-                            <View style={{ flexDirection: "row" }}>
+                        <View style={styles.flatMiddleContainer}>
+                          <View style={{ marginHorizontal: RF(10) }}>
+                            <View style={styles.flatBottomContainer}>
+                              <View style={{ flexDirection: "row" }}>
+                                <FastImage
+                                  source={ICONS.question}
+                                  style={styles.questionImage}
+                                  resizeMode={FastImage.resizeMode.contain}
+                                />
+                                <AppText style={styles.innerItemText}>
+                                  Total
+                                </AppText>
+                              </View>
                               <FastImage
                                 source={ICONS.question}
                                 style={styles.questionImage}
                                 resizeMode={FastImage.resizeMode.contain}
                               />
-                              <AppText style={styles.innerItemText}>
-                                Total
+                            </View>
+                            <AppText
+                              style={{
+                                fontSize: THEME.FONTS.SIZE.XLARGE,
+                                color: THEME.COLORS.secondaryDarkBackground,
+                                fontWeight: "600",
+                              }}
+                            >
+                              $ 31,000 BTC
+                            </AppText>
+                            <View style={{ margin: RF(10) }}>
+                              <AppText style={styles.rateTitle}>
+                                112,000 USD
+                              </AppText>
+                              <AppText style={styles.rateTitle}>
+                                574,130 RMB
                               </AppText>
                             </View>
-                            <FastImage
-                              source={ICONS.question}
-                              style={styles.questionImage}
-                              resizeMode={FastImage.resizeMode.contain}
-                            />
-                          </View>
-                          <AppText
-                            style={{
-                              fontSize: THEME.FONTS.SIZE.XLARGE,
-                              color: THEME.COLORS.secondaryDarkBackground,
-                              fontWeight: "600",
-                            }}
-                          >
-                            $ 31,000 BTC
-                          </AppText>
-                          <View style={{ margin: RF(10) }}>
-                            <AppText style={styles.rateTitle}>
-                              112,000 USD
-                            </AppText>
-                            <AppText style={styles.rateTitle}>
-                              574,130 RMB
-                            </AppText>
                           </View>
                         </View>
-                      </View>
-                      <View
+                   
+                        <View style={{flexDirection:'row',marginTop:RF(10)}}>
+                        <PrimaryButton
+                        icon={"arrow-up-right"}
+                          // buttonStyle={styles.bottombtn}
+                          title="Send"
+                          onPress={() => props.navigation?.navigate("Biometry")}
+                        />
+                        <PrimaryButton
+                          // buttonStyle={styles.bottombtn}
+                          icon={"arrow-down-left"}
+                          title="Receive"
+                          onPress={() => props.navigation?.navigate("Biometry")}
+                        />
+                        </View>
+
+                        <View
                         style={{
-                          flexDirection: "row",
-                          marginTop: RF(10),
+                          // flexDirection: "row",
+                          // marginTop: RF(0),
                         }}
                       >
-                        {/* <AddressInput
-                inputStyle={{
-                  borderWidth: RF(1),
-                  backgroundColor: THEME.COLORS.blueLightShadow,
-                  borderColor: THEME.COLORS.lightBlue,
-                  width: RF(140),
-                }}
-                // value={address}
-                noContacts
-                placeholder="Send"
-                // onChangeText={setAddress}
-                // onChangeAddress={onChangeAddress}
-                // toggleModal={toggleContactModal}
-              />
-              <AddressInput
-                noContacts
-                editable
-                inputStyle={{
-                  borderWidth: RF(1),
-                  backgroundColor: THEME.COLORS.blueLightShadow,
-                  borderColor: THEME.COLORS.lightBlue,
-                  width: RF(140),
-                  marginHorizontal: RF(10),
-                }}
-                // value={address}
-                placeholder="Receive"
-                // onChangeText={setAddress}
-                // onChangeAddress={onChangeAddress}
-                // toggleModal={toggleContactModal}
-              /> */}
+                        <AddressInput
+                         placeholder="Copy"
+                         
+                        showClipboard
+                        inputStyle={{
+                          borderWidth: RF(1),
+                          backgroundColor: THEME.COLORS.white,
+                          borderColor: THEME.COLORS.disabledTextLight,
+                          width: RF(325),
+                         
+                              }}
+                          // value={address}
+                          // onChangeText={setAddress}
+                          // onChangeAddress={onChangeAddress}
+                          // toggleModal={toggleContactModal}
+                        />
+              
                       </View>
-                      <PrimaryButton
-                        buttonStyle={styles.bottombtn}
-                        title="I've Written It Down"
-                        onPress={() => props.navigation?.navigate("Biometry")}
-                      />
-                      <PrimaryButton
-                        buttonStyle={styles.bottombtn}
-                        title="I've Written It Down"
-                        onPress={() => props.navigation?.navigate("Biometry")}
-                      />
+                    
                     </View>
                     <View style={styles.midView}>
                       <AppText style={styles.slideCopytitle}>
@@ -243,8 +238,8 @@ const CoinDetails = (props: Props) => {
                     status={item.status}
                     color={
                       index % 2 == 0
-                        ? THEME.COLORS.primaryGray
-                        : THEME.COLORS.secondaryGray
+                        ?  THEME.COLORS.primaryGrayLight
+                        : THEME.COLORS.primaryGray
                     }
                     // // rate={item.rateColor}
                     // props={props}

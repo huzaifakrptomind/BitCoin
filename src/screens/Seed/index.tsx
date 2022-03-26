@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, SafeAreaView, StatusBar, View } from "react-native";
+import {
+  FlatList,
+  Platform,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import FastImage from "react-native-fast-image";
+import SplashScreen from "react-native-splash-screen";
 import { ICONS } from "../../asset";
 import AppHeader from "../../shared/components/AppHeader";
 import AppText from "../../shared/components/AppText";
@@ -71,6 +80,9 @@ const Item = ({ title, id }) => (
 );
 
 const Seed = (props: Props) => {
+
+  const renderItem = ({ item }) => <Item title={item.title} id={item.id} />;
+
   return (
     <>
       <StatusBar backgroundColor={THEME.COLORS.lightGray} />
@@ -88,9 +100,7 @@ const Seed = (props: Props) => {
               contentContainerStyle={{}}
               data={DATA}
               numColumns={2}
-              renderItem={({ item, index }) => {
-                return <Item title={item.title} id={item.id} />;
-              }}
+              renderItem={renderItem}
               keyExtractor={(item) => item.id}
             />
           </View>
@@ -104,17 +114,19 @@ const Seed = (props: Props) => {
           </View>
           <View style={styles.bottomView}>
             <PrimaryButton
-              buttonStyle={styles.bottombtn}
+            large
+              // buttonStyle={styles.bottombtn}
               title="I've Written It Down"
               onPress={() => props.navigation?.navigate("Biometry")}
             />
             <PrimaryButton
+              disabledMessage
               buttonStyle={[
-                styles.bottombtn,
+              
                 { borderWidth: RF(1), borderColor: THEME.COLORS.blacklight },
               ]}
+              large
               title="Get New Seed"
-              disabled={true}
               onPress={() => props.navigation?.navigate("Biometry")}
             />
           </View>

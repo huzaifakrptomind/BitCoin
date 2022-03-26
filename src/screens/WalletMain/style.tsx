@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     height: RF(190),
     borderRadius: RF(15),
     elevation: RF(3),
-    margin: RF(12),
+    margin: RF(10),
   },
   amountTitle: {
     // textAlign: "center",

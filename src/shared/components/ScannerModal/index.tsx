@@ -98,8 +98,8 @@ const styles = StyleSheet.create({
     width: RF(230),
     borderRadius: RF(7),
     backgroundColor: THEME.COLORS.secondaryDarkBackground,
-    marginTop: RF(20),
-    marginBottom: RF(20),
+    // marginTop: RF(20),
+    // marginBottom: RF(20),
   },
   addressIcon: {
     height: RF(18),

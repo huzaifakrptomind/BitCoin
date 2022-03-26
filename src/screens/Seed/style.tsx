@@ -36,8 +36,7 @@ const styles = StyleSheet.create({
   },
   bottomView: {
     flex: 1.5,
-    // backgroundColor: "green",
-    justifyContent: "center",
+     justifyContent:'space-evenly'
   },
   item: {
     justifyContent: "center",

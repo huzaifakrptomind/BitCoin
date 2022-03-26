@@ -38,17 +38,18 @@ const Biometry = (props: Props) => {
           </View>
           <View style={styles.bottomView}>
             <PrimaryButton
-              buttonStyle={styles.bottombtn}
+            large
+              // buttonStyle={styles.bottombtn}
               title="Enable Biometry Now"
               onPress={() => props.navigation?.navigate("BottomView")}
             />
             <PrimaryButton
+            large
+            disabledMessage
               buttonStyle={[
-                styles.bottombtn,
-                { borderWidth: RF(1), borderColor: THEME.COLORS.blacklight },
+                { borderWidth: RF(1), borderColor: THEME.COLORS.blacklight, },
               ]}
               title="Skip"
-              disabled={true}
               onPress={() => props.navigation?.goBack()}
             />
           </View>

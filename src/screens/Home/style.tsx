@@ -5,7 +5,7 @@ import { RF } from "../../shared/utils/theme/responsive";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: THEME.COLORS.secondaryDarkBackground,
+    backgroundColor: THEME.COLORS.secondaryBackground,
   },
   slideTitle: {
     fontSize: THEME.FONTS.SIZE.XLARGE,
@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     // bottom: RF(75),
     alignSelf: "center",
     flexDirection: "row",
+    justifyContent:'space-around'
   },
   tagTitle: {
     fontSize: THEME.FONTS.SIZE.XXSMALL,

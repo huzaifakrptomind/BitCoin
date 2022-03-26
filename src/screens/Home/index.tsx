@@ -21,7 +21,7 @@ const Home = (props: Props) => {
 
   return (
     <>
-      <StatusBar backgroundColor={THEME.COLORS.secondaryDarkBackground} />
+      {/* <StatusBar backgroundColor={THEME.COLORS.secondaryDarkBackground} /> */}
       <SafeAreaView style={[{ flex: 1 }]}>
         <View style={[styles.container]}>
           <View style={[styles.upperContainer, { flex: 5 }]}>
@@ -38,16 +38,15 @@ const Home = (props: Props) => {
           <View style={styles.midContainer}>
             <View style={styles.actionContainer}>
               <PrimaryButton
-                disabled={false}
-                textStyle={{ fontSize: THEME.FONTS.SIZE.XSMALL }}
+                textStyle={{ fontSize: THEME.FONTS.SIZE.SMALL }}
                 title="Create Wallet "
                 onPress={() => setModalVisible(true)}
               />
               <PrimaryButton
-                disabled={true}
-                textStyle={{ fontSize: THEME.FONTS.SIZE.XSMALL }}
+                disabledMessage 
+                textStyle={{ fontSize: THEME.FONTS.SIZE.SMALL, }}
                 title="Restore Wallet "
-                // onPress={props.navigation?.goBack}
+                onPress={()=>props.navigation?.goBack()}
               />
             </View>
           </View>
