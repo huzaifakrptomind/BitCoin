@@ -87,7 +87,7 @@ const Seed = (props: Props) => {
     <>
       <StatusBar backgroundColor={THEME.COLORS.lightGray} />
       <SafeAreaView style={[{ flex: 1 }]}>
-        <AppHeader showBack showLogo title="Seed" absolute />
+        <AppHeader showBack showDetails showEye showAdd showReload title="Seed" absolute />
         <View style={[styles.container]}>
           <AppText style={[styles.slideSubTitle]}>
             Sed porta nisl orci. Nullam ex magna, tristique ut ligula a,

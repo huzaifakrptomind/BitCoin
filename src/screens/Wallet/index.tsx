@@ -113,7 +113,7 @@ const WalletMain = (props: Props) => {
           title="Wallet"
           statusbarColor={THEME.COLORS.secondaryDarkBackground}
           headerBackgroundColor={THEME.COLORS.secondaryDarkBackground}
-          showBack
+          // showBack
           // showLeft
 
           showLogo

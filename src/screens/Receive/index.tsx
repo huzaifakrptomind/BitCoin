@@ -75,12 +75,6 @@ const Item = ({ title, id }) => (
 
 const Receive = (props: Props) => {
   const [modalVisible, setModalVisible] = useState(false);
-
-  useEffect(() => {
-    SplashScreen.hide();
-  }, []);
-  const renderItem = ({ item }) => <Item title={item.title} id={item.id} />;
-
   return (
     <>
       <SafeAreaView style={[{ flex: 1 }]}>

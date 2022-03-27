@@ -22,8 +22,7 @@ const PinModal = ({
 
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-
+   <StatusBar backgroundColor={THEME.COLORS.white} barStyle={'dark-content'} />
       <Modal visible={visible} animationType="slide">
         <View style={styles.container}>
           <View style={{ flex: 1 }}>
@@ -86,18 +85,7 @@ const PinModal = ({
                     </AppText>
                   );
                 })}
-              </View>
-              {/* <TouchableOpacity style={{ alignSelf: "center" }}>
-                <Text
-                  style={{
-                    // fontFamily: THEME.FONTS.TYPE.SEMIBOLD,
-                    fontSize: THEME.FONTS.SIZE.XXSMALL,
-                    color: THEME.COLORS.black,
-                  }}
-                >
-                  Forget your PIN?
-                </Text>
-              </TouchableOpacity> */}
+              </View>          
               <NumKeyboard
                 showOkay
                 onPressOkay={onConfirm}

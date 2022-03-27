@@ -12,7 +12,7 @@ interface Props extends GenericNavigation {}
 const onBoarding = (props: Props) => {
   return (
     <>
-      <StatusBar barStyle={"light-content"} />
+      <StatusBar barStyle={"light-content"} backgroundColor={THEME.COLORS.intro1Color} />
       <SafeAreaView style={[{ flex: 1 }]}>
         <AppIntroSlider
           bottomButton={true}

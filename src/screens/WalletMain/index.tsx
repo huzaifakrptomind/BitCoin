@@ -73,9 +73,9 @@ const WalletMain = (props: Props) => {
           title="WalletMain"
           statusbarColor={THEME.COLORS.secondaryDarkBackground}
           headerBackgroundColor={THEME.COLORS.secondaryDarkBackground}
-          showBack
-          showLeft
-          absolute
+          // showBack
+          // showLeft
+          // absolute
         />
         <View style={[styles.container]}>
           <View style={styles.firstContainer}>

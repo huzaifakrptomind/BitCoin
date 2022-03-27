@@ -184,14 +184,7 @@ const CoinDetails = (props: Props) => {
                           title="Receive"
                           onPress={() => props.navigation?.navigate("Biometry")}
                         />
-                        </View>
-
-                        <View
-                        style={{
-                          // flexDirection: "row",
-                          // marginTop: RF(0),
-                        }}
-                      >
+                        </View>                 
                         <AddressInput
                          placeholder="Copy"
                          
@@ -200,17 +193,9 @@ const CoinDetails = (props: Props) => {
                           borderWidth: RF(1),
                           backgroundColor: THEME.COLORS.white,
                           borderColor: THEME.COLORS.disabledTextLight,
-                          width: RF(325),
-                         
+                          width: RF(325),                  
                               }}
-                          // value={address}
-                          // onChangeText={setAddress}
-                          // onChangeAddress={onChangeAddress}
-                          // toggleModal={toggleContactModal}
-                        />
-              
-                      </View>
-                    
+                        />           
                     </View>
                     <View style={styles.midView}>
                       <AppText style={styles.slideCopytitle}>

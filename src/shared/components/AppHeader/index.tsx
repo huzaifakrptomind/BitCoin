@@ -16,6 +16,7 @@ import { ICONS } from "../../../asset";
 import { THEME } from "../../utils/theme";
 import GLOBAL_STYLE from "../../utils/theme/global";
 import { RF } from "../../utils/theme/responsive";
+import AppText from "../AppText";
 
 interface Props {
   title?: string;
@@ -65,7 +66,7 @@ const AppHeader = (props: Props) => {
   return (
     <>
       <StatusBar
-        barStyle={theme == "light" ? "dark-content" : "light-content"}
+        // barStyle={theme == "light" ? "dark-content" : "light-content"}
         backgroundColor={props.statusbarColor}
       />
       <View
@@ -99,7 +100,7 @@ const AppHeader = (props: Props) => {
           },
         ]}
       >
-        {/* <View style={styles.left}>
+         <View style={styles.left}>
           {props.showBack ? (
             <TouchableOpacity
               activeOpacity={1}
@@ -117,6 +118,9 @@ const AppHeader = (props: Props) => {
             <View />
           )}
         </View>
+        <View style={{justifyContent:'center',alignItems:'center',flex:1}}>
+          <AppText style={styles.title}>{title}</AppText>
+       </View>
         <View style={styles.right}>
           {props.showReload ? (
             <TouchableOpacity
@@ -195,67 +199,9 @@ const AppHeader = (props: Props) => {
           ) : (
             <View />
           )}
-        </View> */}
-        <View
-          style={{
-            flexDirection: "row",
-            ...GLOBAL_STYLE.CENTER,
-            width: "80%",
-          }}
-        >
-          {props.showLogo && (
-            <TouchableOpacity onPress={props.onPressLogo}>
-              <FastImage
-                source={ICONS.scannerBar}
-                style={styles.logo}
-                resizeMode="contain"
-              />
-            </TouchableOpacity>
-          )}
-          <Text style={styles.title}>{title}</Text>
         </View>
-
-        {props.showBack && (
-          <TouchableOpacity
-            style={styles.backIcon}
-            onPress={onPressBack ? onPressBack : navigation.goBack}
-          >
-            <FastImage
-              source={rightIcon}
-              style={{ width: "100%", height: "100%" }}
-              resizeMode="contain"
-              // tintColor={THEME.COLORS.black}
-            />
-          </TouchableOpacity>
-        )}
-        {props.showLeft && (
-          <TouchableOpacity
-            style={styles.backArrow}
-            onPress={onPressBack ? onPressBack : navigation.goBack}
-          >
-            <FastImage
-              // style={styles.backArrow}
-              source={rightIcon}
-              style={{ width: "100%", height: "100%" }}
-              resizeMode="contain"
-              // tintColor={THEME.COLORS.black}
-            />
-          </TouchableOpacity>
-        )}
-        {props.showReload && (
-          <TouchableOpacity
-            style={styles.backleft}
-            onPress={onPressBack ? onPressBack : navigation.goBack}
-          >
-            <FastImage
-              // style={styles.backArrow}
-              source={rightIcon}
-              style={{ width: "100%", height: "100%" }}
-              resizeMode="contain"
-              // tintColor={THEME.COLORS.black}
-            />
-          </TouchableOpacity>
-        )}
+     
+       
       </View>
     </>
   );
@@ -263,12 +209,9 @@ const AppHeader = (props: Props) => {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
     flexDirection: "row",
     paddingHorizontal: THEME.PADDING.NORMAL,
-    // paddingBottom: RF(15),
     backgroundColor: "red",
-    justifyContent: "space-between",
   },
   rightButton: {
     alignItems: "center",
@@ -276,6 +219,10 @@ const styles = StyleSheet.create({
   },
   right: {
     flexDirection: "row",
+    flex:1,
+    backgroundColor:'gray',
+    justifyContent:'flex-end'
+
   },
   icon: {
     width: RF(22),
@@ -294,14 +241,12 @@ const styles = StyleSheet.create({
     width: RF(25),
   },
   backleft: {
-    // flex: 1,
     height: RF(25),
     width: RF(25),
   },
   logo: {
     height: RF(25),
     width: RF(40),
-    // marginRight: "-2%",
   },
   title: {
     flex: 1,
@@ -311,14 +256,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   backView: {
-    alignSelf: "center",
-    height: "100%",
-    width: "15%",
+
   },
   left: {
-    flexDirection: "row",
-    width: "80%",
-    // height: '100%',
+    backgroundColor:'green',
+    flex:1
   },
 });
 

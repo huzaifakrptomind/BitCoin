@@ -21,7 +21,7 @@ const Home = (props: Props) => {
 
   return (
     <>
-      {/* <StatusBar backgroundColor={THEME.COLORS.secondaryDarkBackground} /> */}
+      <StatusBar backgroundColor={THEME.COLORS.secondaryBackground} />
       <SafeAreaView style={[{ flex: 1 }]}>
         <View style={[styles.container]}>
           <View style={[styles.upperContainer, { flex: 5 }]}>
