@@ -5,11 +5,11 @@ import { RF } from "../../shared/utils/theme/responsive";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: THEME.COLORS.secondaryDarkBackground,
+    // backgroundColor: THEME.COLORS.secondaryDarkBackground,
   },
   firstContainer: {
     flex: 1.8,
-    backgroundColor: THEME.COLORS.secondaryDarkBackground,
+    backgroundColor: THEME.COLORS.secondaryBackground,
     justifyContent: "flex-end",
     alignItems: "center",
   },

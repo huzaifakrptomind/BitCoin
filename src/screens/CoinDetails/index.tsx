@@ -107,8 +107,8 @@ const CoinDetails = (props: Props) => {
       <StatusBar backgroundColor={THEME.COLORS.lightGray} />
       <SafeAreaView style={[{ flex: 1 }]}>
         <AppHeader
-          showBack
-          showLogo
+          showBack      
+          showDetails
           title="Coin Deatils"
           absolute
           onPressLogo={() => setVisible(true)}
@@ -234,8 +234,9 @@ const CoinDetails = (props: Props) => {
               keyExtractor={(item) => item.id}
             />
           </View>
-          <ScannerModal
+          <ScannerModal 
             visible={visible}
+            detailAction={()=>visible}
             onClose={() => {
               setVisible(false);
             }}

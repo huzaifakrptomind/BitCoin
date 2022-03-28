@@ -78,7 +78,7 @@ const Receive = (props: Props) => {
   return (
     <>
       <SafeAreaView style={[{ flex: 1 }]}>
-        <AppHeader showBack showLogo title="Receive" absolute />
+        <AppHeader showBack showLogo title="Receive"  absolute />
         <View style={[styles.container]}>
           <View style={styles.upperContainer}>
             <View style={styles.upperTitleContainer}>

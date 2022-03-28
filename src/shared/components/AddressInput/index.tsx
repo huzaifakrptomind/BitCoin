@@ -56,7 +56,7 @@ const AddressInput = (props: Props) => {
             name="clipboard"
             style={{ alignSelf: "center", }}
             size={24}
-            color={THEME.COLORS.yellow}
+            color={THEME.COLORS.black}
           />
         </TouchableOpacity>
       ) : (

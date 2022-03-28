@@ -70,12 +70,12 @@ const WalletMain = (props: Props) => {
     <>
       <SafeAreaView style={[{ flex: 1 }]}>
         <AppHeader
-          title="WalletMain"
-          statusbarColor={THEME.COLORS.secondaryDarkBackground}
-          headerBackgroundColor={THEME.COLORS.secondaryDarkBackground}
-          // showBack
-          // showLeft
-          // absolute
+          // title="WalletMain"
+          showReload showEye showAdd  
+          statusbarColor={THEME.COLORS.secondaryBackground}
+          headerBackgroundColor={THEME.COLORS.secondaryBackground}
+         
+          absolute
         />
         <View style={[styles.container]}>
           <View style={styles.firstContainer}>

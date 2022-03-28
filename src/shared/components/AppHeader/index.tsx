@@ -108,7 +108,7 @@ const AppHeader = (props: Props) => {
               style={styles.backView}
             >
               <FastImage
-                source={ICONS.ARROW_BACK}
+                source={ICONS.backArrow}
                 resizeMode={FastImage.resizeMode.contain}
                 style={styles.icon}
                 // tintColor={fontColor()}
@@ -129,7 +129,7 @@ const AppHeader = (props: Props) => {
               style={styles.rightButton}
             >
               <FastImage
-                source={ICONS.AUTO_HIDE}
+                source={ICONS.reload}
                 resizeMode={FastImage.resizeMode.contain}
                 style={{ width: RF(32), height: RF(32) }}
               />
@@ -144,7 +144,7 @@ const AppHeader = (props: Props) => {
               style={styles.rightButton}
             >
               <FastImage
-                source={ICONS.EYE}
+                source={ICONS.eye}
                 resizeMode={FastImage.resizeMode.contain}
                 style={{ width: RF(32), height: RF(32) }}
               />
@@ -159,7 +159,7 @@ const AppHeader = (props: Props) => {
               style={styles.rightButton}
             >
               <FastImage
-                source={ICONS.HEADER_CROSS}
+                source={ICONS.plusCircle}
                 resizeMode={FastImage.resizeMode.contain}
                 style={{ width: RF(32), height: RF(32) }}
               />
@@ -174,9 +174,9 @@ const AppHeader = (props: Props) => {
               style={styles.rightButton}
             >
               <FastImage
-                source={ICONS.HEADER_CROSS}
+                source={ICONS.QR_CODE}
                 resizeMode={FastImage.resizeMode.contain}
-                style={{ width: RF(32), height: RF(32) }}
+                style={{ width: RF(20), height: RF(20) }}
               />
             </TouchableOpacity>
           ) : (
@@ -191,7 +191,7 @@ const AppHeader = (props: Props) => {
             >
               <FastImage
                 tintColor={THEME.COLORS.biometryCircleButtonColor}
-                source={ICONS.cross}
+                source={ICONS.crossCircle}
                 resizeMode={FastImage.resizeMode.contain}
                 style={{ width: RF(22), height: RF(22) }}
               />
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
   right: {
     flexDirection: "row",
     flex:1,
-    backgroundColor:'gray',
+    // backgroundColor:'gray',
     justifyContent:'flex-end'
 
   },
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
 
   },
   left: {
-    backgroundColor:'green',
+    // backgroundColor:'green',
     flex:1
   },
 });
