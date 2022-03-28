@@ -15,9 +15,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: THEME.MARGIN.HIGH,
     marginBottom: THEME.MARGIN.NORMAL,
-    color: THEME.COLORS.textDark,
+    // color: THEME.COLORS.textDark,
   },
-  slideImage: { width: RF(370), height: RF(300), alignSelf: "center" },
+  slideImage: { width: RF(340), height: RF(300), alignSelf: "center" },
   slideSubTitle: {
     textAlign: "center",
     fontSize: THEME.FONTS.SIZE.XSMALL,

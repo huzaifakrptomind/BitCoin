@@ -8,7 +8,14 @@ import { GenericNavigation } from "../../shared/utils/models/types";
 import { THEME } from "../../shared/utils/theme";
 
 import styles from "./style";
-interface Props extends GenericNavigation {}
+interface Props extends GenericNavigation {
+  title: string;
+  id: string;
+  image: any;
+  color: string;
+  rate: any;
+  props: any;
+}
 
 const DATA = [
   {
@@ -37,7 +44,7 @@ const DATA = [
     color: THEME.COLORS.dogeCOlor,
   },
 ];
-const Item = ({ title, id, image, color, rate, props }) => (
+const Item = ({ title, id, image, color, rate, props }: Props) => (
   <TouchableOpacity
     style={{}}
     onPress={() => props.navigation.navigate("CoinDetails")}
@@ -70,11 +77,12 @@ const WalletMain = (props: Props) => {
     <>
       <SafeAreaView style={[{ flex: 1 }]}>
         <AppHeader
-          // title="WalletMain"
-          showReload showEye showAdd  
+          showReload
+          showEye
+          showAdd
+          showLeftTitle
           statusbarColor={THEME.COLORS.secondaryBackground}
           headerBackgroundColor={THEME.COLORS.secondaryBackground}
-         
           absolute
         />
         <View style={[styles.container]}>

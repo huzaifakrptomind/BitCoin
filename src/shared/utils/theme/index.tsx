@@ -2,18 +2,19 @@ import { RF, WP } from "./responsive";
 
 export const THEME = {
   COLORS: {
-    primaryBackground:"#FFFFFF",
+    primaryBackground: "#FFFFFF",
     primaryLightBackground: "#F7F7F7",
-    secondaryBackground:"#3B6BFF",
+    secondaryBackground: "#3B6BFF",
     secondaryLightBackground: "#68ACFF",
     primaryDarkBackground: "#F6F6F6",
     // secondaryDarkBackground: "#3B6BFF",
-    intro1Color:"#E6F2FF",
-    intro2Color:"#FFFFFF",
-    intro3Color:"#E6F2FF",
+    intro1Color: "#E6F2FF",
+    intro2Color: "#FFFFFF",
+    intro3Color: "#E6F2FF",
 
-    primaryGray:'#E6E6E6',
-    primaryGrayLight:"#F5F5F5",
+    primaryGray: "#E6E6E6",
+    primaryGrayLight: "#F5F5F5",
+    blueLight: "#EBF4FF",
     blacklight: "#707070",
     buttonGray: "#E3E3E3",
     lightGray: "#F7F7F7",
@@ -45,13 +46,11 @@ export const THEME = {
     biometryCircleButtonColor: "#414A5B",
     reddishBackground: "#e6d7d7",
     modalBackground: "rgba(0,0,0,0.4)",
-    bitcoinColor:"#F7931A",
-    etherumColor:"#2075C3",
-    dashColor:"#0986D3",
-    dogeCOlor:"#C3A723",
-    dashRateColor:"green"
-
-
+    bitcoinColor: "#F7931A",
+    etherumColor: "#2075C3",
+    dashColor: "#0986D3",
+    dogeCOlor: "#C3A723",
+    dashRateColor: "green",
   },
   FONTS: {
     SIZE: {
@@ -106,23 +105,11 @@ export const THEME = {
   },
 };
 export const backgroundColorProperty = () => {
-  // const { darkMode } = store.getState().settings;
-  // if (darkMode) {
-  //   return {
-  //     backgroundColor: THEME.COLORS.primaryDarkBackground,
-  //   };
-  // } else {
   return {
     backgroundColor: THEME.COLORS.primaryLightBackground,
   };
-  // }
 };
 
 export const fontColorPropery = () => {
-  // const { darkMode } = store.getState().settings;
-  // if (darkMode) {
-  //   return { color: THEME.COLORS.white };
-  // } else {
   return { color: THEME.COLORS.black };
-  // }
 };

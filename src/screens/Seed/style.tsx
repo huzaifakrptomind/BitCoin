@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: THEME.FONTS.SIZE.SMALL,
     color: THEME.COLORS.disabledTextLight,
-    marginTop: RF(70),
+    marginTop: RF(90),
     marginHorizontal: RF(30),
     lineHeight: THEME.FONTS.SIZE.LARGE,
     // fontFamily: "Regular",
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   bottomView: {
     flex: 1.5,
-     justifyContent:'space-evenly'
+    justifyContent: "space-evenly",
   },
   item: {
     justifyContent: "center",

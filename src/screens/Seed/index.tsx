@@ -18,7 +18,11 @@ import { GenericNavigation } from "../../shared/utils/models/types";
 import { THEME } from "../../shared/utils/theme";
 import { RF } from "../../shared/utils/theme/responsive";
 import styles from "./style";
-interface Props extends GenericNavigation {}
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+interface Props extends GenericNavigation {
+  title: string;
+  id: string;
+}
 
 const DATA = [
   {
@@ -66,7 +70,7 @@ const DATA = [
     title: "Third",
   },
 ];
-const Item = ({ title, id }) => (
+const Item = ({ title, id }: Props) => (
   <View style={styles.item}>
     <View style={styles.outerView}>
       <View style={styles.leftView}>
@@ -80,58 +84,58 @@ const Item = ({ title, id }) => (
 );
 
 const Seed = (props: Props) => {
-
-  const renderItem = ({ item }) => <Item title={item.title} id={item.id} />;
-
+  const insets = useSafeAreaInsets();
+  const renderItem = ({ item }: any) => (
+    <Item title={item.title} id={item.id} />
+  );
   return (
     <>
       <StatusBar backgroundColor={THEME.COLORS.lightGray} />
-      <SafeAreaView style={[{ flex: 1 }]}>
-        <AppHeader showBack  showCross  title="Seed" absolute />
-        <View style={[styles.container]}>
-          <AppText style={[styles.slideSubTitle]}>
-            Sed porta nisl orci. Nullam ex magna, tristique ut ligula a,
-            eleifend sodales tellus. Nunc sed molestie nisl. Sed porta nisl
-            orci. Nullam ex magna, tristique ut ligula a, eleifend sodales
-            tellus. Nunc sed molestie nisl.
-          </AppText>
-          <View style={styles.flatView}>
-            <FlatList
-              contentContainerStyle={{}}
-              data={DATA}
-              numColumns={2}
-              renderItem={renderItem}
-              keyExtractor={(item) => item.id}
-            />
-          </View>
-          <View style={styles.copyView}>
-            <FastImage
-              source={ICONS.copy}
-              style={styles.slideImage}
-              resizeMode={FastImage.resizeMode.contain}
-            />
-            <AppText style={styles.slideCopytitle}>Copy</AppText>
-          </View>
-          <View style={styles.bottomView}>
-            <PrimaryButton
-            large
-              // buttonStyle={styles.bottombtn}
-              title="I've Written It Down"
-              onPress={() => props.navigation?.navigate("Biometry")}
-            />
-            <PrimaryButton
-              disabledMessage
-              buttonStyle={[
-              
-                { borderWidth: RF(1), borderColor: THEME.COLORS.blacklight },
-              ]}
-              large
-              title="Get New Seed"
-              onPress={() => props.navigation?.navigate("Biometry")}
-            />
-          </View>
+      {/* <SafeAreaView style={[{ flex: 1 }]}> */}
+      <AppHeader showBack showCross title="Seed" absolute />
+      <View style={[styles.container, { paddingBottom: insets.bottom }]}>
+        <AppText style={[styles.slideSubTitle]}>
+          Sed porta nisl orci. Nullam ex magna, tristique ut ligula a, eleifend
+          sodales tellus. Nunc sed molestie nisl. Sed porta nisl orci. Nullam ex
+          magna, tristique ut ligula a, eleifend sodales tellus. Nunc sed
+          molestie nisl.
+        </AppText>
+        <View style={styles.flatView}>
+          <FlatList
+            contentContainerStyle={{}}
+            data={DATA}
+            numColumns={2}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.id}
+          />
         </View>
-      </SafeAreaView>
+        <View style={styles.copyView}>
+          <FastImage
+            source={ICONS.copy}
+            style={styles.slideImage}
+            resizeMode={FastImage.resizeMode.contain}
+          />
+          <AppText style={styles.slideCopytitle}>Copy</AppText>
+        </View>
+        <View style={styles.bottomView}>
+          <PrimaryButton
+            large
+            // buttonStyle={styles.bottombtn}
+            title="I've Written It Down"
+            onPress={() => props.navigation?.navigate("Biometry")}
+          />
+          <PrimaryButton
+            disabledMessage
+            buttonStyle={[
+              { borderWidth: RF(1), borderColor: THEME.COLORS.blacklight },
+            ]}
+            large
+            title="Get New Seed"
+            // onPress={() => props.navigation?.navigate("Biometry")}
+          />
+        </View>
+      </View>
+      {/* </SafeAreaView> */}
     </>
   );
 };

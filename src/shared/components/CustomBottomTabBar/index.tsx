@@ -2,24 +2,12 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { THEME } from "../../utils/theme";
 import styles from "./styles";
-// import { useSelector } from "react-redux";
-// import DAP_ICON from "../../../assets/icons/DAP_ICON";
-// import NEWS_ICON from "../../../assets/icons/NEWS_ICON";
-// import SETTING_ICON from "../../../assets/icons/SETTING_ICON";
-// import STAKING_ICON from "../../../assets/icons/STACKING_ICON";
-// import SWAP_ICON from "../../../assets/icons/SWAP_ICON";
-// import WALLET_ICON from "../../../assets/icons/WALLET_ICON";
-// import { RootState } from "../../store";
-// import { backgroundColorProperty, THEME } from "../../theme";
-// import styles from "./styles";
 import { ICONS } from "../../../asset";
 export default function CustomBottomTabBar({
   state,
   descriptors,
   navigation,
 }: any) {
-  // const focusedOptions = descriptors[state.routes[state.index].key].options;
-
   const darkModeStyle = {
     shadowColor: "#000",
     shadowOffset: {
@@ -31,10 +19,6 @@ export default function CustomBottomTabBar({
     elevation: 5,
     backgroundColor: THEME.COLORS.primaryDarkBackground,
   };
-
-  // if (focusedOptions.tabBarVisible === false) {
-  //   return null;
-  // }
 
   const RenderImage = ({
     index,
@@ -58,34 +42,17 @@ export default function CustomBottomTabBar({
   };
 
   const labelColor = (isFocused: boolean) => {
-    // if (darkMode) {
     if (isFocused) {
       return THEME.COLORS.yellow;
     }
     return "gray";
-    // } else {
-    //   if (isFocused) {
-    //     return "white";
-    //   } else {
-    //     return "rgb(247, 208, 71)";
-    //   }
-    // }
   };
 
   const iconColor = (isFocused: boolean) => {
-    // if (darkMode) {
     if (isFocused) {
       return THEME.COLORS.yellow;
     }
     return "gray";
-    // }
-    // else {
-    //   if (isFocused) {
-    //     return "white";
-    //   } else {
-    //     return "rgb(228, 180, 14)";
-    //   }
-    // }
   };
 
   return (

@@ -22,7 +22,10 @@ const PinModal = ({
 
   return (
     <>
-   <StatusBar backgroundColor={THEME.COLORS.white} barStyle={'dark-content'} />
+      <StatusBar
+        backgroundColor={THEME.COLORS.white}
+        barStyle={"dark-content"}
+      />
       <Modal visible={visible} animationType="slide">
         <View style={styles.container}>
           <View style={{ flex: 1 }}>
@@ -85,7 +88,7 @@ const PinModal = ({
                     </AppText>
                   );
                 })}
-              </View>          
+              </View>
               <NumKeyboard
                 showOkay
                 onPressOkay={onConfirm}

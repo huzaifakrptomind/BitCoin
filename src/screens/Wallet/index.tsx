@@ -8,7 +8,14 @@ import { GenericNavigation } from "../../shared/utils/models/types";
 import { THEME } from "../../shared/utils/theme";
 
 import styles from "./style";
-interface Props extends GenericNavigation {}
+interface Props extends GenericNavigation {
+  title: string;
+  id: string;
+  image: any;
+  color: string;
+  rate: string;
+  props: any;
+}
 
 const DATA = [
   {
@@ -54,7 +61,7 @@ const DATA = [
     rateColor: THEME.COLORS.red,
   },
 ];
-const Item = ({ title, id, image, color, rate, props }) => (
+const Item = ({ title, id, image, color, rate, props }: Props) => (
   <TouchableOpacity
     style={{}}
     onPress={() => props.navigation.navigate("Receive")}
@@ -94,7 +101,7 @@ const Item = ({ title, id, image, color, rate, props }) => (
 );
 
 const WalletMain = (props: Props) => {
-  const renderItem = ({ item }) => (
+  const renderItem = ({ item }: any) => (
     <Item
       title={item.title}
       id={item.id}
@@ -109,12 +116,13 @@ const WalletMain = (props: Props) => {
   return (
     <>
       <SafeAreaView style={[{ flex: 1 }]}>
-      <AppHeader
-          // title="WalletMain"
-               showReload showEye showAdd  
+        <AppHeader
+          showReload
+          showLeftTitle
+          showEye
+          showAdd
           statusbarColor={THEME.COLORS.secondaryBackground}
           headerBackgroundColor={THEME.COLORS.secondaryBackground}
-         
           absolute
         />
         <View style={[styles.container]}>
@@ -127,7 +135,7 @@ const WalletMain = (props: Props) => {
             <View style={styles.firstBottomView}>
               <View style={styles.firstBottomLeftView}>
                 <FastImage
-                  source={ICONS.downIncome}
+                  source={ICONS.upIncome}
                   style={styles.slideImage}
                   resizeMode={FastImage.resizeMode.contain}
                 />

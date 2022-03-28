@@ -28,7 +28,7 @@ interface Props extends TouchableOpacityProps {
   large?: boolean;
   disabled?: boolean;
   disabledMessage?: boolean;
-  titleColorProp?:string
+  titleColorProp?: string;
   // iconStyle?:StyleProp<IconProps>
 }
 
@@ -38,7 +38,9 @@ const PrimaryButton = (props: Props) => {
   };
 
   let shadowColorProp = {
-    shadowColor: props.disabledMessage ? THEME.COLORS.black : THEME.COLORS.yellow,
+    shadowColor: props.disabledMessage
+      ? THEME.COLORS.black
+      : THEME.COLORS.yellow,
   };
 
   let buttonBackgroundColor = () => {
@@ -59,18 +61,16 @@ const PrimaryButton = (props: Props) => {
       ]}
       // disabled={props.loading || props.disabled}
       activeOpacity={0.7}
-    
     >
       <View style={{ flexDirection: "row", alignItems: "center" }}>
-          {/* {props.loading ? (
+        {/* {props.loading ? (
           <ActivityIndicator color={THEME.COLORS.white} />
         ) : ( */}
-          <Text style={[styles.buttonText, titleColorProp, props.textStyle]}>
-            {props.title}
-          </Text>
+        <Text style={[styles.buttonText, titleColorProp, props.textStyle]}>
+          {props.title}
+        </Text>
         {/* )} */}
-        {props.icon && <Icon name={props.icon} style={[styles.icon,]}  />}
-      
+        {props.icon && <Icon name={props.icon} style={[styles.icon]} />}
       </View>
     </TouchableOpacity>
   );
@@ -81,7 +81,7 @@ export default PrimaryButton;
 const styles = StyleSheet.create({
   container: {
     width: "42%",
-    height: RF(52),
+    height: RF(45),
     alignSelf: "center",
     borderRadius: THEME.RADIUS.BOX,
     ...GLOBAL_STYLE.CENTER,
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
   icon: {
     fontSize: 25,
     color: THEME.COLORS.white,
-    marginLeft:RF(55)
+    marginLeft: RF(55),
   },
   buttonText: {
     fontFamily: THEME.FONTS.TYPE.SEMIBOLD,

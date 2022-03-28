@@ -15,7 +15,7 @@ import { THEME } from "../../utils/theme";
 import { HP, RF } from "../../utils/theme/responsive";
 interface Props extends TextInputProps {
   inputStyle?: StyleProp<TextStyle>;
-  onChangeAddress: (text: string) => void;
+  onChangeAddress?: (text: string) => void;
   toggleModal?: () => void;
   noContacts?: boolean;
   showClipboard?: boolean;
@@ -26,10 +26,10 @@ interface Props extends TextInputProps {
 const AddressInput = (props: Props) => {
   const [showScanner, setShowScanner] = useState(false);
 
-  const scannerCallBack = (address: string) => {
-    setShowScanner(false);
-    props.onChangeAddress(address);
-  };
+  // const scannerCallBack = (address: string) => {
+  //   setShowScanner(false);
+  //   props.onChangeAddress(address);
+  // };
 
   return (
     <View
@@ -54,7 +54,7 @@ const AddressInput = (props: Props) => {
         >
           <Feather
             name="clipboard"
-            style={{ alignSelf: "center", }}
+            style={{ alignSelf: "center" }}
             size={24}
             color={THEME.COLORS.black}
           />
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     height: HP(6),
     color: THEME.COLORS.black,
     paddingHorizontal: THEME.PADDING.LOW,
-    fontSize:RF(15)
+    fontSize: RF(15),
     // fontFamily: THEME.FONTS.TYPE.REGULAR,
   },
   scan: { width: RF(20), height: "100%" },

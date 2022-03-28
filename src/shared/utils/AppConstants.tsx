@@ -26,21 +26,3 @@ export const INTRO_SLIDES = [
     color: THEME.COLORS.intro3Color,
   },
 ];
-
-export const IOS_INTRO_SLIDES = [
-  {
-    key: 1,
-    title: "Private & Secure Wallet",
-    text: "Private keys never leave you device.",
-    image: ICONS.OB1,
-  },
-  {
-    key: 2,
-    title: "Swap",
-    text: "Exchange one crypto asset to another without using fiat currency as an intermediary.",
-    image: ICONS.OB2,
-  },
-];
-
-export const home_text =
-  "Your finances and tokens are always under control, use them safely and comfortably";

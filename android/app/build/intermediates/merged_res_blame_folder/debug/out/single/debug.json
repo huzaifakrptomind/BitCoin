@@ -1,58 +1,58 @@
 [
     {
-        "merged": "F:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "F:\\Kryptomind\\BitCoin\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "/Users/kryptomind/BitCoin/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/kryptomind/BitCoin/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "F:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash_screen.png.flat",
-        "source": "F:\\Kryptomind\\BitCoin\\android\\app\\src\\main\\res\\drawable\\splash_screen.png"
+        "merged": "/Users/kryptomind/BitCoin/android/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/kryptomind/BitCoin/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "F:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "F:\\Kryptomind\\BitCoin\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "/Users/kryptomind/BitCoin/android/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/kryptomind/BitCoin/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "F:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "F:\\Kryptomind\\BitCoin\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "/Users/kryptomind/BitCoin/android/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/kryptomind/BitCoin/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "F:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "F:\\Kryptomind\\BitCoin\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "/Users/kryptomind/BitCoin/android/app/build/intermediates/res/merged/debug/drawable_background_splash.xml.flat",
+        "source": "/Users/kryptomind/BitCoin/android/app/src/main/res/drawable/background_splash.xml"
     },
     {
-        "merged": "F:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "F:\\Kryptomind\\BitCoin\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "/Users/kryptomind/BitCoin/android/app/build/intermediates/res/merged/debug/drawable_rn_edit_text_material.xml.flat",
+        "source": "/Users/kryptomind/BitCoin/android/app/src/main/res/drawable/rn_edit_text_material.xml"
     },
     {
-        "merged": "F:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "F:\\Kryptomind\\BitCoin\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "/Users/kryptomind/BitCoin/android/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/kryptomind/BitCoin/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "F:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_launch_screen.xml.flat",
-        "source": "F:\\Kryptomind\\BitCoin\\android\\app\\src\\main\\res\\layout\\launch_screen.xml"
+        "merged": "/Users/kryptomind/BitCoin/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/kryptomind/BitCoin/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "F:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "F:\\Kryptomind\\BitCoin\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "/Users/kryptomind/BitCoin/android/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/kryptomind/BitCoin/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
     {
-        "merged": "F:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_background_splash.xml.flat",
-        "source": "F:\\Kryptomind\\BitCoin\\android\\app\\src\\main\\res\\drawable\\background_splash.xml"
+        "merged": "/Users/kryptomind/BitCoin/android/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/kryptomind/BitCoin/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "F:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_rn_edit_text_material.xml.flat",
-        "source": "F:\\Kryptomind\\BitCoin\\android\\app\\src\\main\\res\\drawable\\rn_edit_text_material.xml"
+        "merged": "/Users/kryptomind/BitCoin/android/app/build/intermediates/res/merged/debug/drawable_splash_screen.png.flat",
+        "source": "/Users/kryptomind/BitCoin/android/app/src/main/res/drawable/splash_screen.png"
     },
     {
-        "merged": "F:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "F:\\Kryptomind\\BitCoin\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "/Users/kryptomind/BitCoin/android/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/kryptomind/BitCoin/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "F:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "F:\\Kryptomind\\BitCoin\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "/Users/kryptomind/BitCoin/android/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/kryptomind/BitCoin/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "F:\\Kryptomind\\BitCoin\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "F:\\Kryptomind\\BitCoin\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "/Users/kryptomind/BitCoin/android/app/build/intermediates/res/merged/debug/layout_launch_screen.xml.flat",
+        "source": "/Users/kryptomind/BitCoin/android/app/src/main/res/layout/launch_screen.xml"
     }
 ]

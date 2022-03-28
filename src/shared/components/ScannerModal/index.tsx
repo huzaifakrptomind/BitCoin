@@ -14,18 +14,15 @@ const ScannerModal = ({
   onConfirm,
   onClose,
 }: {
-  visible: boolean;
-  title: string;
-  subTitle: string;
+  visible?: boolean;
+  title?: string;
+  subTitle?: string;
   onConfirm?: any;
   onClose?: any;
 }) => {
-  const [visibleScanner, setVisibleScanner] = useState(visible);
-
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-
+      {/* <StatusBar barStyle="dark-content" /> */}
       <Modal visible={visible} transparent animationType="slide">
         <View style={styles.container}>
           <View style={styles.modal}>
@@ -54,6 +51,7 @@ const ScannerModal = ({
               />
               <PrimaryButton
                 buttonStyle={styles.bottombtn}
+                // large
                 title="Copy"
                 onPress={onClose}
               />
@@ -96,10 +94,9 @@ const styles = StyleSheet.create({
   },
   bottombtn: {
     width: RF(230),
+    height: RF(40),
     borderRadius: RF(7),
-    backgroundColor: THEME.COLORS.secondaryDarkBackground,
-    // marginTop: RF(20),
-    // marginBottom: RF(20),
+    backgroundColor: THEME.COLORS.secondaryBackground,
   },
   addressIcon: {
     height: RF(18),

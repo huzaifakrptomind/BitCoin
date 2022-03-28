@@ -31,6 +31,7 @@ interface Props {
   showQR?: boolean;
   showAdd?: boolean;
   showDetails?: boolean;
+  showShadow?: string;
   showEye?: boolean;
   showReload?: boolean;
   showCross?: boolean;
@@ -42,9 +43,9 @@ interface Props {
   headerStyle?: StyleProp<ViewStyle>;
   showSearchBar?: boolean;
   onPressLogo?: () => void;
-  statusbarColor: string;
-  showShadow?: boolean;
-  headerBackgroundColor: string;
+  statusbarColor?: string;
+  headerBackgroundColor?: string;
+  showLeftTitle?: boolean;
 }
 
 const AppHeader = (props: Props) => {
@@ -58,6 +59,7 @@ const AppHeader = (props: Props) => {
     showShadow,
     statusbarColor,
     headerBackgroundColor,
+    showLeftTitle,
   } = props;
 
   const insets = useSafeAreaInsets();
@@ -66,7 +68,7 @@ const AppHeader = (props: Props) => {
   return (
     <>
       <StatusBar
-        // barStyle={theme == "light" ? "dark-content" : "light-content"}
+        barStyle={theme == "light" ? "dark-content" : "light-content"}
         backgroundColor={props.statusbarColor}
       />
       <View
@@ -100,7 +102,7 @@ const AppHeader = (props: Props) => {
           },
         ]}
       >
-         <View style={styles.left}>
+        <View style={styles.left}>
           {props.showBack ? (
             <TouchableOpacity
               activeOpacity={1}
@@ -115,12 +117,25 @@ const AppHeader = (props: Props) => {
               />
             </TouchableOpacity>
           ) : (
-            <View />
+            <View style={{}}>
+              {/* <AppText
+                style={[styles.leftTitle, { color: THEME.COLORS.white }]}
+              >
+                {"Wallet"}
+              </AppText> */}
+            </View>
+          )}
+          {props.showLeftTitle ? (
+            <AppText style={[styles.leftTitle, { color: THEME.COLORS.white }]}>
+              {"Wallet"}
+            </AppText>
+          ) : (
+            <></>
           )}
         </View>
-        <View style={{justifyContent:'center',alignItems:'center',flex:1}}>
+        <View style={styles.center}>
           <AppText style={styles.title}>{title}</AppText>
-       </View>
+        </View>
         <View style={styles.right}>
           {props.showReload ? (
             <TouchableOpacity
@@ -170,7 +185,7 @@ const AppHeader = (props: Props) => {
           {props.showDetails ? (
             <TouchableOpacity
               activeOpacity={1}
-              onPress={props.detailAction}
+              onPress={onPressQR}
               style={styles.rightButton}
             >
               <FastImage
@@ -190,7 +205,7 @@ const AppHeader = (props: Props) => {
               style={styles.rightButton}
             >
               <FastImage
-                tintColor={THEME.COLORS.biometryCircleButtonColor}
+                // tintColor={THEME.COLORS.biometryCircleButtonColor}
                 source={ICONS.crossCircle}
                 resizeMode={FastImage.resizeMode.contain}
                 style={{ width: RF(22), height: RF(22) }}
@@ -199,9 +214,12 @@ const AppHeader = (props: Props) => {
           ) : (
             <View />
           )}
+          {/* {props.showRightTitle ?(
+
+          ):(
+            >
+          )} */}
         </View>
-     
-       
       </View>
     </>
   );
@@ -219,10 +237,14 @@ const styles = StyleSheet.create({
   },
   right: {
     flexDirection: "row",
-    flex:1,
+    flex: 1,
     // backgroundColor:'gray',
-    justifyContent:'flex-end'
-
+    justifyContent: "flex-end",
+  },
+  center: {
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
   },
   icon: {
     width: RF(22),
@@ -249,18 +271,21 @@ const styles = StyleSheet.create({
     width: RF(40),
   },
   title: {
-    flex: 1,
+    // flex: 1,
     fontSize: THEME.FONTS.SIZE.LARGE,
     fontFamily: THEME.FONTS.TYPE.BOLD,
     color: THEME.COLORS.black,
     textAlign: "center",
   },
-  backView: {
-
+  backView: {},
+  leftTitle: {
+    fontSize: THEME.FONTS.SIZE.LARGE,
+    fontFamily: THEME.FONTS.TYPE.BOLD,
+    color: THEME.COLORS.black,
   },
   left: {
     // backgroundColor:'green',
-    flex:1
+    flex: 1,
   },
 });
 

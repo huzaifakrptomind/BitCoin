@@ -75,7 +75,7 @@ const Coin = (props: Props) => {
 
   return (
     <>
-      <StatusBar backgroundColor={THEME.COLORS.lightGray} />
+      {/* <StatusBar backgroundColor={THEME.COLORS.lightGray} /> */}
       <SafeAreaView style={[{ flex: 1 }]}>
         <AppHeader showBack showLogo title="Seed" absolute />
         <View style={[styles.container]}>

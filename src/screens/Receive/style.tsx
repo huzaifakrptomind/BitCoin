@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginHorizontal: RF(20),
-    marginTop: RF(70),
+    marginTop: RF(80),
   },
   bottomContainer: {
     flex: 1,

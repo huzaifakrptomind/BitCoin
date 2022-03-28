@@ -1,11 +1,11 @@
-import {StyleSheet} from 'react-native';
-import {THEME} from '.';
-import {WP} from './responsive';
+import { StyleSheet } from "react-native";
+import { THEME } from ".";
+import { WP } from "./responsive";
 
 const GLOBAL_STYLE = StyleSheet.create({
   CENTER: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   MAIN: {
     flex: 1,
@@ -13,7 +13,7 @@ const GLOBAL_STYLE = StyleSheet.create({
     paddingHorizontal: THEME.PADDING.LOW,
   },
   ROW: {
-    flexDirection: 'row',
+    flexDirection: "row",
   },
 });
 

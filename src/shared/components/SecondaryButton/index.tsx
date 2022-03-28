@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     marginBottom: THEME.MARGIN.NORMAL,
   },
   buttonText: {
-    fontFamily: THEME.FONTS.TYPE.SEMIBOLD,
+    // fontFamily: THEME.FONTS.TYPE.SEMIBOLD,
     fontSize: THEME.FONTS.SIZE.SMALL,
     textAlign: "center",
     color: THEME.COLORS.yellow,

@@ -19,7 +19,18 @@ import styles from "./style";
 import faker from "faker";
 import ScannerModal from "../../shared/components/ScannerModal";
 import AddressInput from "../../shared/components/AddressInput";
-interface Props extends GenericNavigation {}
+interface Props extends GenericNavigation {
+  title: string;
+  id: string;
+  image: any;
+  color: string;
+  rate: string;
+  props: any;
+  symbol: string;
+  amount: string;
+  date: string;
+  status: string;
+}
 
 const historyData = [...Array(10).keys()].map((_, i) => {
   return {
@@ -64,7 +75,7 @@ const DATA = [
     status: "Pending",
   },
 ];
-const Item = ({ title, image, amount, symbol, date, status, color }) => (
+const Item = ({ title, image, amount, symbol, date, status, color }: Props) => (
   <TouchableOpacity
     style={{}}
     // onPress={() => props.navigation.navigate("CoinDetails")}
@@ -104,14 +115,15 @@ const CoinDetails = (props: Props) => {
 
   return (
     <>
-      <StatusBar backgroundColor={THEME.COLORS.lightGray} />
+      <StatusBar backgroundColor={THEME.COLORS.white} />
       <SafeAreaView style={[{ flex: 1 }]}>
         <AppHeader
-          showBack      
+          showBack
           showDetails
-          title="Coin Deatils"
+          title="Bitcoin"
           absolute
-          onPressLogo={() => setVisible(true)}
+          // visible
+          onPressQR={() => setVisible(true)}
         />
         <View style={[styles.container]}>
           <View style={styles.flatContiner}>
@@ -124,56 +136,56 @@ const CoinDetails = (props: Props) => {
                 return (
                   <>
                     <View style={styles.flatUpperContainer}>
-                        <View>
-                          <FastImage
-                            source={ICONS.bitcoin}
-                            style={styles.coinImage}
-                            resizeMode={FastImage.resizeMode.contain}
-                          />
-                        </View>
+                      <View>
+                        <FastImage
+                          source={ICONS.bitcoin}
+                          style={styles.coinImage}
+                          resizeMode={FastImage.resizeMode.contain}
+                        />
+                      </View>
                       <AppText style={styles.slideSubTitle}> Bitcoin</AppText>
-                        <View style={styles.flatMiddleContainer}>
-                          <View style={{ marginHorizontal: RF(10) }}>
-                            <View style={styles.flatBottomContainer}>
-                              <View style={{ flexDirection: "row" }}>
-                                <FastImage
-                                  source={ICONS.question}
-                                  style={styles.questionImage}
-                                  resizeMode={FastImage.resizeMode.contain}
-                                />
-                                <AppText style={styles.innerItemText}>
-                                  Total
-                                </AppText>
-                              </View>
+                      <View style={styles.flatMiddleContainer}>
+                        <View style={{ marginHorizontal: RF(10) }}>
+                          <View style={styles.flatBottomContainer}>
+                            <View style={{ flexDirection: "row" }}>
                               <FastImage
                                 source={ICONS.question}
                                 style={styles.questionImage}
                                 resizeMode={FastImage.resizeMode.contain}
                               />
+                              <AppText style={styles.innerItemText}>
+                                Total
+                              </AppText>
                             </View>
-                            <AppText
-                              style={{
-                                fontSize: THEME.FONTS.SIZE.XLARGE,
-                                color: THEME.COLORS.secondaryDarkBackground,
-                                fontWeight: "600",
-                              }}
-                            >
-                              $ 31,000 BTC
+                            <FastImage
+                              source={ICONS.question}
+                              style={styles.questionImage}
+                              resizeMode={FastImage.resizeMode.contain}
+                            />
+                          </View>
+                          <AppText
+                            style={{
+                              fontSize: THEME.FONTS.SIZE.XLARGE,
+                              color: THEME.COLORS.secondaryDarkBackground,
+                              fontWeight: "600",
+                            }}
+                          >
+                            $ 31,000 BTC
+                          </AppText>
+                          <View style={{ margin: RF(10) }}>
+                            <AppText style={styles.rateTitle}>
+                              112,000 USD
                             </AppText>
-                            <View style={{ margin: RF(10) }}>
-                              <AppText style={styles.rateTitle}>
-                                112,000 USD
-                              </AppText>
-                              <AppText style={styles.rateTitle}>
-                                574,130 RMB
-                              </AppText>
-                            </View>
+                            <AppText style={styles.rateTitle}>
+                              574,130 RMB
+                            </AppText>
                           </View>
                         </View>
-                   
-                        <View style={{flexDirection:'row',marginTop:RF(10)}}>
+                      </View>
+
+                      <View style={{ flexDirection: "row", marginTop: RF(10) }}>
                         <PrimaryButton
-                        icon={"arrow-up-right"}
+                          icon={"arrow-up-right"}
                           // buttonStyle={styles.bottombtn}
                           title="Send"
                           onPress={() => props.navigation?.navigate("Biometry")}
@@ -184,18 +196,17 @@ const CoinDetails = (props: Props) => {
                           title="Receive"
                           onPress={() => props.navigation?.navigate("Biometry")}
                         />
-                        </View>                 
-                        <AddressInput
-                         placeholder="Copy"
-                         
+                      </View>
+                      <AddressInput
+                        placeholder="Copy"
                         showClipboard
                         inputStyle={{
                           borderWidth: RF(1),
                           backgroundColor: THEME.COLORS.white,
                           borderColor: THEME.COLORS.disabledTextLight,
-                          width: RF(325),                  
-                              }}
-                        />           
+                          width: RF(325),
+                        }}
+                      />
                     </View>
                     <View style={styles.midView}>
                       <AppText style={styles.slideCopytitle}>
@@ -223,7 +234,7 @@ const CoinDetails = (props: Props) => {
                     status={item.status}
                     color={
                       index % 2 == 0
-                        ?  THEME.COLORS.primaryGrayLight
+                        ? THEME.COLORS.primaryGrayLight
                         : THEME.COLORS.primaryGray
                     }
                     // // rate={item.rateColor}
@@ -234,9 +245,8 @@ const CoinDetails = (props: Props) => {
               keyExtractor={(item) => item.id}
             />
           </View>
-          <ScannerModal 
+          <ScannerModal
             visible={visible}
-            detailAction={()=>visible}
             onClose={() => {
               setVisible(false);
             }}

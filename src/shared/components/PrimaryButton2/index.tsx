@@ -11,9 +11,6 @@ import {
   TextStyle,
 } from "react-native";
 import { THEME } from "../../utils/theme";
-// import { THEME } from "../../theme";
-// import GLOBAL_STYLE from "../../theme/global";
-// import { HP, RF } from "../../theme/responsive";
 import Icon from "react-native-vector-icons/Entypo";
 import { RF } from "../../utils/theme/responsive";
 import GLOBAL_STYLE from "../../utils/theme/global";

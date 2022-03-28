@@ -11,7 +11,7 @@ const Security = (props: Props) => {
 
   return (
     <>
-      <StatusBar backgroundColor={THEME.COLORS.white} />
+      {/* <StatusBar backgroundColor={THEME.COLORS.white} /> */}
       <SafeAreaView style={[{ flex: 1 }]}>
         <View style={styles.container}>
           <PinModal
