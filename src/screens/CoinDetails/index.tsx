@@ -116,143 +116,141 @@ const CoinDetails = (props: Props) => {
   return (
     <>
       <StatusBar backgroundColor={THEME.COLORS.white} />
-      <SafeAreaView style={[{ flex: 1 }]}>
-        <AppHeader
-          showBack
-          showDetails
-          title="Bitcoin"
-          absolute
-          // visible
-          onPressQR={() => setVisible(true)}
-        />
-        <View style={[styles.container]}>
-          <View style={styles.flatContiner}>
-            <FlatList
-              contentContainerStyle={{}}
-              showsVerticalScrollIndicator={false}
-              data={DATA}
-              numColumns={1}
-              ListHeaderComponent={() => {
-                return (
-                  <>
-                    <View style={styles.flatUpperContainer}>
-                      <View>
-                        <FastImage
-                          source={ICONS.bitcoin}
-                          style={styles.coinImage}
-                          resizeMode={FastImage.resizeMode.contain}
-                        />
-                      </View>
-                      <AppText style={styles.slideSubTitle}> Bitcoin</AppText>
-                      <View style={styles.flatMiddleContainer}>
-                        <View style={{ marginHorizontal: RF(10) }}>
-                          <View style={styles.flatBottomContainer}>
-                            <View style={{ flexDirection: "row" }}>
-                              <FastImage
-                                source={ICONS.question}
-                                style={styles.questionImage}
-                                resizeMode={FastImage.resizeMode.contain}
-                              />
-                              <AppText style={styles.innerItemText}>
-                                Total
-                              </AppText>
-                            </View>
+      {/* <SafeAreaView style={[{ flex: 1 }]}> */}
+      <AppHeader
+        showBack
+        showDetails
+        title="Bitcoin"
+        absolute
+        // visible
+        onPressQR={() => setVisible(true)}
+      />
+      <View style={[styles.container]}>
+        <View style={styles.flatContiner}>
+          <FlatList
+            contentContainerStyle={{}}
+            showsVerticalScrollIndicator={false}
+            data={DATA}
+            numColumns={1}
+            ListHeaderComponent={() => {
+              return (
+                <>
+                  <View style={styles.flatUpperContainer}>
+                    <View>
+                      <FastImage
+                        source={ICONS.bitcoin}
+                        style={styles.coinImage}
+                        resizeMode={FastImage.resizeMode.contain}
+                      />
+                    </View>
+                    <AppText style={styles.slideSubTitle}> Bitcoin</AppText>
+                    <View style={styles.flatMiddleContainer}>
+                      <View style={{ marginHorizontal: RF(10) }}>
+                        <View style={styles.flatBottomContainer}>
+                          <View style={{ flexDirection: "row" }}>
                             <FastImage
                               source={ICONS.question}
                               style={styles.questionImage}
                               resizeMode={FastImage.resizeMode.contain}
                             />
+                            <AppText style={styles.innerItemText}>
+                              Total
+                            </AppText>
                           </View>
-                          <AppText
-                            style={{
-                              fontSize: THEME.FONTS.SIZE.XLARGE,
-                              color: THEME.COLORS.secondaryDarkBackground,
-                              fontWeight: "600",
-                            }}
-                          >
-                            $ 31,000 BTC
+                          <FastImage
+                            source={ICONS.question}
+                            style={styles.questionImage}
+                            resizeMode={FastImage.resizeMode.contain}
+                          />
+                        </View>
+                        <AppText
+                          style={{
+                            fontSize: THEME.FONTS.SIZE.XLARGE,
+                            color: THEME.COLORS.secondaryDarkBackground,
+                            fontWeight: "600",
+                          }}
+                        >
+                          $ 31,000 BTC
+                        </AppText>
+                        <View style={{ margin: RF(10) }}>
+                          <AppText style={styles.rateTitle}>
+                            112,000 USD
                           </AppText>
-                          <View style={{ margin: RF(10) }}>
-                            <AppText style={styles.rateTitle}>
-                              112,000 USD
-                            </AppText>
-                            <AppText style={styles.rateTitle}>
-                              574,130 RMB
-                            </AppText>
-                          </View>
+                          <AppText style={styles.rateTitle}>
+                            574,130 RMB
+                          </AppText>
                         </View>
                       </View>
+                    </View>
 
-                      <View style={{ flexDirection: "row", marginTop: RF(10) }}>
-                        <PrimaryButton
-                          icon={"arrow-up-right"}
-                          // buttonStyle={styles.bottombtn}
-                          title="Send"
-                          onPress={() => props.navigation?.navigate("Biometry")}
-                        />
-                        <PrimaryButton
-                          // buttonStyle={styles.bottombtn}
-                          icon={"arrow-down-left"}
-                          title="Receive"
-                          onPress={() => props.navigation?.navigate("Biometry")}
-                        />
-                      </View>
-                      <AddressInput
-                        placeholder="Copy"
-                        showClipboard
-                        inputStyle={{
-                          borderWidth: RF(1),
-                          backgroundColor: THEME.COLORS.white,
-                          borderColor: THEME.COLORS.disabledTextLight,
-                          width: RF(325),
-                        }}
+                    <View style={{ flexDirection: "row", marginTop: RF(10) }}>
+                      <PrimaryButton
+                        icon={"arrow-up-right"}
+                        // buttonStyle={styles.bottombtn}
+                        title="Send"
+                        onPress={() => props.navigation?.navigate("Biometry")}
+                      />
+                      <PrimaryButton
+                        // buttonStyle={styles.bottombtn}
+                        icon={"arrow-down-left"}
+                        title="Receive"
+                        onPress={() => props.navigation?.navigate("Biometry")}
                       />
                     </View>
-                    <View style={styles.midView}>
-                      <AppText style={styles.slideCopytitle}>
-                        Transaction
-                      </AppText>
-                      <Text>24 March, 2021</Text>
-                    </View>
-                    <View style={styles.bottomView}>
-                      <Text style={{ marginRight: RF(10) }}>All</Text>
-                      <Text style={{ marginRight: RF(10) }}>Received</Text>
-                      <Text style={{ marginRight: RF(10) }}>Sent</Text>
-                    </View>
-                  </>
-                );
-              }}
-              renderItem={({ item, index }) => {
-                return (
-                  <Item
-                    title={item.title}
-                    // id={item.id}
-                    image={item.image}
-                    amount={item.amount}
-                    symbol={item.symbol}
-                    date={item.date}
-                    status={item.status}
-                    color={
-                      index % 2 == 0
-                        ? THEME.COLORS.primaryGrayLight
-                        : THEME.COLORS.primaryGray
-                    }
-                    // // rate={item.rateColor}
-                    // props={props}
-                  />
-                );
-              }}
-              keyExtractor={(item) => item.id}
-            />
-          </View>
-          <ScannerModal
-            visible={visible}
-            onClose={() => {
-              setVisible(false);
+                    <AddressInput
+                      placeholder="Copy"
+                      showClipboard
+                      inputStyle={{
+                        borderWidth: RF(1),
+                        backgroundColor: THEME.COLORS.white,
+                        borderColor: THEME.COLORS.disabledTextLight,
+                        width: RF(325),
+                      }}
+                    />
+                  </View>
+                  <View style={styles.midView}>
+                    <AppText style={styles.slideCopytitle}>Transaction</AppText>
+                    <Text>24 March, 2021</Text>
+                  </View>
+                  <View style={styles.bottomView}>
+                    <Text style={{ marginRight: RF(10) }}>All</Text>
+                    <Text style={{ marginRight: RF(10) }}>Received</Text>
+                    <Text style={{ marginRight: RF(10) }}>Sent</Text>
+                  </View>
+                </>
+              );
             }}
+            renderItem={({ item, index }) => {
+              return (
+                <Item
+                  title={item.title}
+                  // id={item.id}
+                  image={item.image}
+                  amount={item.amount}
+                  symbol={item.symbol}
+                  date={item.date}
+                  status={item.status}
+                  color={
+                    index % 2 == 0
+                      ? THEME.COLORS.primaryGrayLight
+                      : THEME.COLORS.primaryGray
+                  }
+                  // // rate={item.rateColor}
+                  // props={props}
+                />
+              );
+            }}
+            keyExtractor={(item) => item.id}
           />
         </View>
-      </SafeAreaView>
+        <ScannerModal
+          visible={visible}
+          onClose={() => {
+            setVisible(false);
+          }}
+        />
+      </View>
+      {/* </SafeAreaView> */}
     </>
   );
 };

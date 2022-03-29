@@ -9,7 +9,10 @@ import { GenericNavigation } from "../../shared/utils/models/types";
 import { THEME } from "../../shared/utils/theme";
 import { RF } from "../../shared/utils/theme/responsive";
 import styles from "./style";
-interface Props extends GenericNavigation {}
+interface Props extends GenericNavigation {
+  title: string;
+  id: string;
+}
 
 const DATA = [
   {
@@ -57,7 +60,7 @@ const DATA = [
     title: "Third",
   },
 ];
-const Item = ({ title, id }) => (
+const Item = ({ title, id }: Props) => (
   <View style={styles.item}>
     <View style={styles.outerView}>
       <View style={styles.leftView}>
@@ -71,7 +74,9 @@ const Item = ({ title, id }) => (
 );
 
 const Coin = (props: Props) => {
-  const renderItem = ({ item }) => <Item title={item.title} id={item.id} />;
+  const renderItem = ({ item }: any) => (
+    <Item title={item.title} id={item.id} />
+  );
 
   return (
     <>

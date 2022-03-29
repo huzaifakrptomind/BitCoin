@@ -9,6 +9,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import NewsStack from "../BottomTab/NewsStack";
 import WalletMain from "../WalletMain";
 import Wallet from "../Wallet";
+import styles from "./style";
 interface Props extends GenericNavigation {}
 
 function HomeScreen() {
@@ -29,29 +30,11 @@ function SettingsScreen() {
 
 const Tab = createBottomTabNavigator();
 
-const CustomButton = ({ children, onPress }) => (
-  <TouchableOpacity
-    style={{
-      top: -20,
-      justifyContent: "center",
-      alignItems: "center",
-    }}
-    onPress={onPress}
-  >
-    <View
-      style={{
-        width: 70,
-        height: 70,
-        borderRadius: 35,
-        backgroundColor: THEME.COLORS.skyBlue,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+const CustomButton = ({ children, onPress }: any) => (
+  <TouchableOpacity style={styles.bottomTabView} onPress={onPress}>
+    <View style={styles.bottomTabInerView}>
       <MaterialCommunityIcons name="wallet-outline" size={30} color={"white"} />
-      <Text style={{ color: THEME.COLORS.white, fontWeight: "bold" }}>
-        Wallet
-      </Text>
+      <Text style={styles.bottomTitle}>Wallet</Text>
     </View>
   </TouchableOpacity>
 );

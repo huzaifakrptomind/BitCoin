@@ -23,11 +23,11 @@ const Home = (props: Props) => {
 
   return (
     <>
-      <StatusBar
+      {/* <StatusBar
         backgroundColor={THEME.COLORS.secondaryBackground}
         barStyle="light-content"
-      />
-      {/* <SafeAreaView style={[{ flex: 1 }]}> */}
+      /> */}
+      {/* <SafeAreaView style={[{ backgroundColor: "red" }]} /> */}
       <View style={[styles.container, { paddingBottom: insets.bottom }]}>
         <View style={[styles.upperContainer, { flex: 5 }]}>
           <FastImage
